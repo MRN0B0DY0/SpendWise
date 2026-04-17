@@ -12,6 +12,183 @@ body {
     cursor: default;
 }
 
+@media screen and (min-width:426px) and (max-width:768px) {
+    .nav-menu {
+        width: 20vw;
+        padding: 1rem;
+        padding-top: 2.5rem;
+        border-right: solid 2px #ccc;
+        background-color: red;
+    }
+
+    .nav-brand {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-logo {
+        width: 1.75rem;
+    }
+
+    .nav-brand-name {
+        width: 10rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 3rem;
+        padding-left: 0.25rem;
+    }
+
+    .nav-title {
+        margin: 0;
+        text-align: center;
+        font-size: 16px;
+        font-family: "poppins";
+    }
+
+    .nav-subtitle {
+        margin: 0;
+        font-size: 8px;
+        text-align: center;
+    }
+
+    .nav-links-list {
+        width: 8rem;
+        padding-left: 0;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-item {
+        padding-left: 0.3rem;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        border: solid 1px black;
+        cursor: pointer;
+    }
+
+    .nav-icon {
+        height: 1.25rem;
+        padding-right: 0.25rem;
+    }
+
+    .nav-link {
+        font-size: 11px;
+    }
+
+    /* main content styles */
+
+    .dashboard {
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+        padding: 1.25rem;
+        padding-top: 0;
+        background-color: blue;
+    }
+
+    .dashboard-hero {
+        height: 6rem;
+        width: 100%;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .dashboard-title {
+        font-size: 25px;
+        font-family: "poppins";
+        margin-bottom: 0;
+    }
+
+    .dashboard-subtitle {
+        font-size: 13px;
+        margin-top: 0.1rem;
+    }
+
+    /* 1st line  */
+
+    .dashboard-summary {
+        display: flex;
+        justify-content: space-between;
+        height: 6rem;
+        margin-right: 1rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .dashboard-summary-card {
+        width: 8.5rem;
+        padding-left: 0.65rem;
+        padding-right: 0.65rem;
+        border: solid 1px black;
+    }
+
+    .dashboard-summary-title {
+        font-size: 15px;
+    }
+
+    .dashboard-summary-value {
+        font-size: 12px;
+    }
+    
+    /* 2nd line  */
+
+    .dashboard-widgets {
+        display: flex;
+        justify-content: space-between;
+        height: 22rem;
+        margin-right: 1rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .dashboard-widget-card {
+        width: 10.1rem;
+        padding-left: 0.66rem;
+        padding-right: 0.66rem;
+        border: solid 1px black;
+    }
+
+    .dashboard-widget-chart {
+        width: 14rem;
+    }
+
+    .dashboard-widget-title {
+        font-size: 15px;
+    }
+
+    .dashboard-widget-text {
+        font-size: 12px;
+    }
+
+    /* 3rd line  */
+    
+    .dashboard-details {
+        height: 21rem;
+        display: flex;
+        justify-content: space-between;
+        margin-right: 1rem;
+    }
+
+    .dashboard-detail-card {
+        width: 17.27rem;
+        padding-left: 0.65rem;
+        padding-right: 0.65rem;
+        border: solid 1px black;
+    }
+
+    .dashboard-detail-title {
+        font-size: 15px;
+    }
+
+    .dashboard-detail-text {
+        font-size: 12px;
+    }
+}
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .nav-menu {
         width: 15vw;
@@ -110,6 +287,8 @@ body {
         margin-top: 0.1rem;
     }
 
+    /* 1st line  */
+
     .dashboard-summary {
         display: flex;
         justify-content: space-between;
@@ -132,6 +311,8 @@ body {
     .dashboard-summary-value {
         font-size: 15px;
     }
+
+    /* 2nd line  */
 
     .dashboard-widgets {
         display: flex;
@@ -159,6 +340,8 @@ body {
     .dashboard-widget-text {
         font-size: 15px;
     }
+
+    /* 3rd line  */
 
     .dashboard-details {
         height: 21rem;
@@ -275,6 +458,8 @@ body {
         margin-top: 0.1rem;
     }
 
+    /* 1st line  */
+
     .dashboard-summary {
         display: flex;
         justify-content: space-between;
@@ -291,6 +476,8 @@ body {
         padding-right: 0.65rem;
         border: solid 1px black;
     }
+
+    /* 2nd line  */
 
     .dashboard-widgets {
         display: flex;
@@ -311,6 +498,8 @@ body {
     .dashboard-widget-chart {
         width: 27.2rem;
     }
+
+    /* 3rd line  */
 
     .dashboard-details {
         display: flex;
