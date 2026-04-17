@@ -1,0 +1,329 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    font-family: "inter";
+    cursor: default;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .nav-menu {
+        width: 15vw;
+        padding: 1rem;
+        padding-top: 2.5rem;
+        border-right: solid 2px #ccc;
+        background-color: red;
+    }
+
+    .nav-brand {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-logo {
+        width: 2rem;
+    }
+
+    .nav-brand-name {
+        width: 10rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 3rem;
+        padding-left: 0.25rem;
+    }
+
+    .nav-title {
+        margin: 0;
+        text-align: center;
+        font-size: 20px;
+        font-family: "poppins";
+    }
+
+    .nav-subtitle {
+        margin: 0;
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .nav-links-list {
+        width: 8rem;
+        padding-left: 0;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-item {
+        padding-left: 0.3rem;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        border: solid 1px black;
+        cursor: pointer;
+    }
+
+    .nav-icon {
+        height: 1.5rem;
+        padding-right: 0.25rem;
+    }
+
+    .nav-link {
+        font-size: 11px;
+    }
+
+    /* main content styles */
+
+    .dashboard {
+        display: flex;
+        flex-direction: column;
+        width: 85vw;
+        padding: 1.25rem;
+        padding-top: 0;
+        background-color: blue;
+    }
+
+    .dashboard-hero {
+        height: 6rem;
+        width: 100%;
+        margin-top: 1.5rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .dashboard-title {
+        font-size: 30px;
+        font-family: "poppins";
+        margin-bottom: 0;
+    }
+
+    .dashboard-subtitle {
+        font-size: 16px;
+        margin-top: 0.1rem;
+    }
+
+    .dashboard-summary {
+        display: flex;
+        justify-content: space-between;
+        height: 6rem;
+        margin-right: 1rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .dashboard-summary-card {
+        width: 12.5rem;
+        padding-left: 0.65rem;
+        padding-right: 0.65rem;
+        border: solid 1px black;
+    }
+
+    .dashboard-summary-title {
+        font-size: 20px;
+    }
+
+    .dashboard-summary-value {
+        font-size: 15px;
+    }
+
+    .dashboard-widgets {
+        display: flex;
+        justify-content: space-between;
+        height: 22rem;
+        margin-right: 1rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .dashboard-widget-card {
+        width: 16.1rem;
+        padding-left: 0.66rem;
+        padding-right: 0.66rem;
+        border: solid 1px black;
+    }
+
+    .dashboard-widget-chart {
+        width: 18rem;
+    }
+
+    .dashboard-widget-title {
+        font-size: 20px;
+    }
+
+    .dashboard-widget-text {
+        font-size: 15px;
+    }
+
+    .dashboard-details {
+        height: 21rem;
+        display: flex;
+        justify-content: space-between;
+        margin-right: 1rem;
+    }
+
+    .dashboard-detail-card {
+        width: 25.3rem;
+        padding-left: 0.65rem;
+        padding-right: 0.65rem;
+        border: solid 1px black;
+    }
+
+    .dashboard-detail-title {
+        font-size: 20px;
+    }
+
+    .dashboard-detail-text {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    .nav-menu {
+        width: 17vw;
+        padding: 2rem;
+        background-color: red;
+        border-right: solid 3px #ccc;
+    }
+
+    .nav-brand {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-logo {
+        width: 3.5rem;
+    }
+
+    .nav-brand-name {
+        width: 20rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 5rem;
+        padding-left: 0.25rem;
+    }
+
+    .nav-title {
+        margin: 0;
+        text-align: center;
+        font-family: "poppins";
+    }
+
+    .nav-subtitle {
+        margin: 0;
+        text-align: center;
+    }
+
+    .nav-links-list {
+        width: 12rem;
+        padding-left: 0;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-item {
+        padding-left: 0.3rem;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        border: solid 1px black;
+        cursor: pointer;
+    }
+
+    .nav-icon {
+        height: 2.5rem;
+        padding-right: 1rem;
+    }
+
+    /* main content styles */
+
+    .dashboard {
+        display: flex;
+        flex-direction: column;
+        width: 83vw;
+        padding: 1.25rem;
+        background-color: blue;
+        overflow-y: auto;
+    }
+
+    .dashboard-hero {
+        height: 5rem;
+        width: 65rem;
+        margin-top: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .dashboard-title {
+        font-size: 40px;
+        font-family: "poppins";
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .dashboard-subtitle {
+        font-size: 20px;
+        margin-top: 0.1rem;
+    }
+
+    .dashboard-summary {
+        display: flex;
+        justify-content: space-between;
+        height: 7rem;
+        width: 70rem;
+        margin-top: 0;
+        margin-right: 1rem;
+        margin-bottom: 0.7rem;
+    }
+
+    .dashboard-summary-card {
+        width: 17.2rem;
+        padding-left: 0.65rem;
+        padding-right: 0.65rem;
+        border: solid 1px black;
+    }
+
+    .dashboard-widgets {
+        display: flex;
+        justify-content: space-between;
+        height: 20rem;
+        width: 70rem;
+        margin-right: 1rem;
+        margin-bottom: 0.7rem;
+    }
+
+    .dashboard-widget-card {
+        width: 21rem;
+        padding-left: 0.66rem;
+        padding-right: 0.66rem;
+        border: solid 1px black;
+    }
+
+    .dashboard-widget-chart {
+        width: 27.2rem;
+    }
+
+    .dashboard-details {
+        display: flex;
+        justify-content: space-between;
+        height: 20rem;
+        width: 70rem;
+        margin-right: 1rem;
+    }
+
+    .dashboard-detail-card {
+        width: 34.8rem;
+        padding-left: 0.65rem;
+        padding-right: 0.65rem;
+        border: solid 1px black;
+    }
+}
