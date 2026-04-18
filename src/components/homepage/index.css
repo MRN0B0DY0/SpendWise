@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-body {
+.homepage {
     height: 100vh;
     width: 100vw;
     margin: 0;
@@ -18,7 +18,7 @@ body {
         padding: 1rem;
         padding-top: 2.5rem;
         border-right: solid 2px #ccc;
-        background-color: red;
+        background-color: slategray;
     }
 
     .nav-brand {
@@ -125,7 +125,7 @@ body {
     .dashboard-widgets {
         display: grid;
         grid-template-columns: 8.5rem 8.5rem;
-        height: 10rem;
+        height: 16rem;
         margin-right: 1rem;
         margin-bottom: 0.3rem;
         gap: 0.5rem;
@@ -152,7 +152,7 @@ body {
     /* 3rd line  */
     
     .dashboard-details {
-        height: 21rem;
+        height: 15rem;
         display: grid;
         grid-template-columns:  17.5rem;
         margin-right: 1rem;
@@ -183,7 +183,7 @@ body {
         padding: 1rem;
         padding-top: 2.5rem;
         border-right: solid 2px #ccc;
-        background-color: red;
+        background-color: slateblue;
     }
 
     .nav-brand {
@@ -359,7 +359,7 @@ body {
         padding: 1rem;
         padding-top: 2.5rem;
         border-right: solid 2px #ccc;
-        background-color: red;
+        background-color: salmon;
     }
 
     .nav-brand {
@@ -532,7 +532,7 @@ body {
     .nav-menu {
         width: 17vw;
         padding: 2rem;
-        background-color: red;
+        background-color: cyan;
         border-right: solid 3px #ccc;
     }
 
@@ -706,7 +706,7 @@ body {
     .nav-menu {
         width: 17vw;
         padding: 2rem;
-        background-color: red;
+        background-color: yellow;
         border-right: solid 3px #ccc;
     }
 
@@ -877,7 +877,7 @@ body {
     .nav-menu {
         width: 20vw;
         padding: 2rem;
-        background-color: red;
+        background-color: pink;
         border-right: solid 3px #ccc;
     }
 
