@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpreedWise</title>
+    <link rel="stylesheet" href="transactions.css">
+</head>
+
+<body>
+    <div class="transactions">
+        <div class="nav-menu">
+            <div class="nav-brand">
+                <div>
+                    <img src="logo.png" alt="Logo" class="nav-logo" />
+                </div>
+                <div class="nav-brand-name">
+                    <h1 class="nav-title">SpendWise</h1>
+                    <p class="nav-subtitle">Finance Tracker</p>
+                </div>
+            </div>
+            <div>
+                <ul class="nav-links-list">
+                    <li class="nav-item">
+                        <img src="dashboard-icon.png" alt="Dashboard Icon" class="nav-icon" />
+                        <a href="/dashboard" class="nav-link">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <img src="transactions-icon.png" alt="Transactions Icon" class="nav-icon" />
+                        <a href="/transactions" class="nav-link">Transactions</a>
+                    </li>
+                    <li class="nav-item">
+                        <img src="add-transaction-icon.png" alt="Add Transaction Icon" class="nav-icon" />
+                        <a href="/add-transaction" class="nav-link">Add Transaction</a>
+                    </li>
+                    <li class="nav-item">
+                        <img src="budget-planner-icon.png" alt="Budget Planner Icon" class="nav-icon" />
+                        <a href="/budget-planner" class="nav-link">Budget Planner</a>
+                    </li>
+                    <li class="nav-item">
+                        <img src="reports-icon.png" alt="Reports Icon" class="nav-icon" />
+                        <a href="/reports" class="nav-link">Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <img src="profile-icon.png" alt="Profile Icon" class="nav-icon" />
+                        <a href="/profile" class="nav-link">Profile</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="transactions-content">
+
+            <!-- Hero -->
+            <div class="transactions-hero">
+                <h1 class="transactions-title">Transactions</h1>
+                <p class="transactions-subtitle">Manage all your income and expense records</p>
+            </div>
+
+            <!-- Header -->
+            <div class="transactions-header">
+                <div class="transactions-header-text">
+                    <h2 class="transactions-heading">All Transactions</h2>
+                    <p class="transactions-description">
+                        Track, search, and organize your transaction history
+                    </p>
+                </div>
+                <div class="transactions-header-action">
+                    <img src="add-transaction-icon.png" alt="Add Transaction" class="transactions-add-icon" />
+                    <a class="transactions-add-btn">Add Transaction</a>
+                    <img src="arrow-icon.png" alt="arrow" class="transactions-arrow-icon" />
+                </div>
+            </div>
+
+            <!-- Summary Cards -->
+            <div class="transactions-summary">
+                <div class="summary-card">
+                    <h3 class="summary-card-title">Total Transactions</h3>
+                    <p class="summary-card-value">128</p>
+                </div>
+                <div class="summary-card">
+                    <h3 class="summary-card-title">Income Records</h3>
+                    <p class="summary-card-value">42</p>
+                </div>
+                <div class="summary-card">
+                    <h3 class="summary-card-title">Expense Records</h3>
+                    <p class="summary-card-value">86</p>
+                </div>
+                <div class="summary-card">
+                    <h3 class="summary-card-title">This Month</h3>
+                    <p class="summary-card-value">₹18450</p>
+                </div>
+            </div>
+
+            <!-- Search & Filter -->
+            <div class="transactions-controls">
+                <div class="search-box">
+                    <img src="search-icon.png" alt="Search" class="search-icon" />
+                    <input type="text" placeholder="Search transactions..." class="search-box-input" />
+                </div>
+                <div class="filter-options">
+                    <p class="filter-options-text">Filter Options</p>
+                </div>
+            </div>
+
+            <!-- Transactions List -->
+            <div class="transactions-list">
+                <div class="transaction-card">
+                    <img src="transaction1.png" alt="Transaction" class="transaction-card-image" />
+                    <div class="transaction-card-info">
+                        <h4 class="transaction-card-title">Grocery Shopping</h4>
+                        <p class="transaction-card-meta">Entertainment • Credit Card</p>
+                    </div>
+                    <p class="transaction-card-type">Expense</p>
+                    <p class="transaction-card-amount">₹123456</p>
+                    <button type="button" class="transaction-card-btn">View Details</button>
+                </div>
+
+                <div class="transaction-card">
+                    <img src="transaction2.png" class="transaction-card-image" />
+                    <div class="transaction-card-info">
+                        <h4 class="transaction-card-title">Grocery Shopping</h4>
+                        <p class="transaction-card-meta">Entertainment • Credit Card</p>
+                    </div>
+                    <p class="transaction-card-type">Expense</p>
+                    <p class="transaction-card-amount">₹999</p>
+                    <button class="transaction-card-btn">View Details</button>
+                </div>
+                
+                <div class="transaction-card">
+                    <img src="transaction2.png" class="transaction-card-image" />
+                    <div class="transaction-card-info">
+                        <h4 class="transaction-card-title">Grocery Shopping</h4>
+                        <p class="transaction-card-meta">Entertainment • Credit Card</p>
+                    </div>
+                    <p class="transaction-card-type">Expense</p>
+                    <p class="transaction-card-amount">₹999</p>
+                    <button class="transaction-card-btn">View Details</button>
+                </div>
+
+                <div class="transaction-card">
+                    <img src="transaction2.png" class="transaction-card-image" />
+                    <div class="transaction-card-info">
+                        <h4 class="transaction-card-title">Grocery Shopping</h4>
+                        <p class="transaction-card-meta">Entertainment • Credit Card</p>
+                    </div>
+                    <p class="transaction-card-type">Expense</p>
+                    <p class="transaction-card-amount">₹999</p>
+                    <button class="transaction-card-btn">View Details</button>
+                </div>
+                
+                <div class="transaction-card">
+                    <img src="transaction2.png" class="transaction-card-image" />
+                    <div class="transaction-card-info">
+                        <h4 class="transaction-card-title">Grocery Shopping</h4>
+                        <p class="transaction-card-meta">Entertainment • Credit Card</p>
+                    </div>
+                    <p class="transaction-card-type">Expense</p>
+                    <p class="transaction-card-amount">₹999</p>
+                    <button class="transaction-card-btn">View Details</button>
+                </div>
+
+                <div class="transaction-card">
+                    <img src="transaction2.png" class="transaction-card-image" />
+                    <div class="transaction-card-info">
+                        <h4 class="transaction-card-title">Grocery Shopping</h4>
+                        <p class="transaction-card-meta">Entertainment • Credit Card</p>
+                    </div>
+                    <p class="transaction-card-type">Expense</p>
+                    <p class="transaction-card-amount">₹999</p>
+                    <button class="transaction-card-btn">View Details</button>
+                </div>
+                
+                <div class="transaction-card">
+                    <img src="transaction2.png" class="transaction-card-image" />
+                    <div class="transaction-card-info">
+                        <h4 class="transaction-card-title">Grocery Shopping</h4>
+                        <p class="transaction-card-meta">Entertainment • Credit Card</p>
+                    </div>
+                    <p class="transaction-card-type">Expense</p>
+                    <p class="transaction-card-amount">₹999</p>
+                    <button class="transaction-card-btn">View Details</button>
+                </div>
+
+                <div class="transaction-card">
+                    <img src="transaction2.png" class="transaction-card-image" />
+                    <div class="transaction-card-info">
+                        <h4 class="transaction-card-title">Grocery Shopping</h4>
+                        <p class="transaction-card-meta">Entertainment • Credit Card</p>
+                    </div>
+                    <p class="transaction-card-type">Expense</p>
+                    <p class="transaction-card-amount">₹999</p>
+                    <button type="button" class="transaction-card-btn">View Details</button>
+                </div>
+                
+                <div class="transaction-card">
+                    <img src="transaction2.png" class="transaction-card-image" />
+                    <div class="transaction-card-info">
+                        <h4 class="transaction-card-title">Grocery Shopping</h4>
+                        <p class="transaction-card-meta">Entertainment • Credit Card</p>
+                    </div>
+                    <p class="transaction-card-type">Expense</p>
+                    <p class="transaction-card-amount">₹999</p>
+                    <button type="button" class="transaction-card-btn">View Details</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -80,7 +80,7 @@ body {
 
     .transactions-content {
         display: grid;
-        grid-template-rows: 0.9fr 0.5fr 1fr 0.5fr 5.5fr;
+        grid-template-rows: 1fr 1fr 0.1fr 1fr 8.5fr;
         gap: 0.5rem;
         width: 85vw;
         padding: 0.6rem 1.25rem 1.25rem 1.25rem;
@@ -92,14 +92,13 @@ body {
     
     .transactions-hero {
         width: 100%;
-        padding-bottom: 1.4rem;
     }
 
     .transactions-title {
         font-size: 25px;
         font-family: "poppins";
         margin-bottom: 0;
-        margin-top: 1.9rem;
+        margin-top: 1.3rem;
     }
 
     .transactions-subtitle {
@@ -113,6 +112,7 @@ body {
     .transactions-header {
         display: grid;
         grid-template-columns: 1.25fr 1fr;
+        align-items: center;
     }
 
     .transactions-header-text {
@@ -121,7 +121,7 @@ body {
 
     .transactions-heading {
         font-size: 15px;
-        margin-top: 0.1rem;
+        margin-top: 0;
         margin-bottom: 0;
     }
 
@@ -173,14 +173,12 @@ body {
     }
 
     .summary-card-title {
-        height: 2.2rem;
-        margin-top: 0.5rem;
+        margin-bottom: 0;
         font-size: 15px;
     }
 
     .summary-card-value {
         font-size: 12px;
-        margin-bottom: 0.3rem;
     }
 
     /* search & filter section */
@@ -201,8 +199,8 @@ body {
     }
 
     .search-icon {
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
+        margin-top: 0;
+        margin-bottom: 0;
         margin-left: 1rem;
         margin-right: 1rem;
         height: 1rem;
@@ -363,7 +361,7 @@ body {
 
     .transactions-content {
         display: grid;
-        grid-template-rows: 1fr 0.5fr 1fr 0.25fr 9fr;
+        grid-template-rows: 1fr 1fr 0.1fr 0.25fr 8.5fr;
         gap: 0.5rem;
         width: 85vw;
         padding: 0.6rem 1.25rem 1.25rem 1.25rem;
@@ -375,7 +373,6 @@ body {
     
     .transactions-hero {
         width: 30rem;
-        padding-bottom: 1.3rem;
     }
 
     .transactions-title {
@@ -395,7 +392,8 @@ body {
 
     .transactions-header {
         display: grid;
-        grid-template-columns: 2.35fr 1fr; 
+        grid-template-columns: 2.35fr 1fr;
+        align-items: center;
     }
 
     .transactions-heading {
@@ -452,14 +450,12 @@ body {
     }
 
     .summary-card-title {
-        margin-top: 0.5rem;
-        margin-bottom: 1rem;
-        font-size: 12px;
+        margin-bottom: 0;
+        font-size: 15px;
     }
 
     .summary-card-value {
-        font-size: 15px;
-        padding-bottom: 0.6rem;
+        font-size: 12px;
     }
 
     /* search & filter section */
@@ -551,7 +547,7 @@ body {
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        margin-right: 0.5rem;
+        margin-right: 0.25rem;
     }
 }
 
@@ -636,7 +632,7 @@ body {
 
     .transactions-content {
         display: grid;
-        grid-template-rows: 0.75fr 0.5fr 0.75fr 0.25fr 6.5fr;
+        grid-template-rows: 1fr 1fr 0.5fr 0.25fr 6.5fr;
         gap: 0.5rem;
         width: 85vw;
         padding: 0.6rem 1.25rem 1.25rem 1.25rem;
@@ -647,15 +643,14 @@ body {
     /* hero section */
     
     .transactions-hero {
-        width: 30rem;
-        padding-bottom: 0.5rem;
+        width: 30rem; 
     }
 
     .transactions-title {
         font-size: 30px;
         font-family: "poppins";
         margin-bottom: 0;
-        margin-top: 2.2rem;
+        margin-top: 2rem;
     }
 
     .transactions-subtitle {
@@ -668,12 +663,13 @@ body {
 
     .transactions-header {
         display: grid;
-        grid-template-columns: 3.1fr 1fr;
+        grid-template-columns: 3fr 1fr;
+        align-items: center; 
     }
 
     .transactions-heading {
         font-size: 18px;
-        margin-top: 0.3rem;
+        margin-top: 0;
         margin-bottom: 0;
     }
 
@@ -687,7 +683,6 @@ body {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        margin-top: 1.5rem;
         padding: 0.5rem;
         cursor: pointer;
         border-radius: 0.2rem;
@@ -700,7 +695,7 @@ body {
     }
 
     .transactions-add-btn {
-        font-size: 15px;
+        font-size: 16px;
         font-weight: bold;
         margin: 0.1rem 0 0.1rem 0.1rem;
     }
@@ -725,15 +720,12 @@ body {
     }
 
     .summary-card-title {
-        height: 1.5rem;
+        margin-bottom: 0;
         font-size: 17px;
-        margin-top: 0.5rem;
     }
 
     .summary-card-value {
-        margin-top: 1.5rem;
-        margin-bottom: 1.6rem;
-        font-size: 20px;
+        font-size: 13px;
     }
 
     /* search & filter section */
@@ -741,7 +733,7 @@ body {
     .transactions-controls {
         display: grid;
         grid-template-columns: auto auto;
-        gap: 0.5rem;
+        gap: 0.5rem; 
     }
 
     .search-box {
@@ -767,7 +759,6 @@ body {
 
     .filter-options {
         border: solid 2px salmon;
-        padding-bottom: 1rem;
     }
 
     /*Transaction list */
@@ -826,7 +817,7 @@ body {
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        margin-right: 0.75rem;
+        margin-right: 0.25rem;
     }
 }
 
@@ -909,10 +900,10 @@ body {
 
     .transactions-content {
         display: grid;
-        grid-template-rows: 1fr 1fr 1fr 0.5fr 6.5fr;
-        gap: 0.5rem;
+        grid-template-rows: 1fr 1fr 1fr 0.25fr 6.5fr;
+        gap: 0.7rem;
         width: 83vw;
-        padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+        padding: 0.6rem 1.25rem 1.25rem 1.25rem;
         background-color: blue;
         overflow-y: auto;
     }
@@ -921,7 +912,6 @@ body {
     
     .transactions-hero {
         width: 30rem;
-        padding-top: 1.75rem;
     }
 
     .transactions-title {
@@ -942,10 +932,8 @@ body {
 
     .transactions-header {
         display: grid;
-        grid-template-columns: 3.1fr 1fr;
-        align-items: flex-start;
-        padding-top: 0.55rem;
-        padding-bottom: 0.9rem;
+        grid-template-columns: 4fr 1fr;
+        align-items: center;
     }
 
     .transactions-heading {
@@ -991,7 +979,7 @@ body {
     .transactions-summary {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 0.5rem;
+        gap: 1rem; 
     }
 
     .summary-card {
@@ -1001,14 +989,12 @@ body {
     }
 
     .summary-card-title {
-        height: 2.5rem;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0;
         font-size: 20px;
     }
 
     .summary-card-value {
-        font-size: 22px;
-        padding-bottom: 0.25rem;
+        font-size: 18px;
     }
 
     /* search & filter section */
@@ -1016,7 +1002,7 @@ body {
     .transactions-controls {
         display: grid;
         grid-template-columns: auto auto;
-        gap: 0.5rem;
+        gap: 1rem; 
     }
 
     .search-box {
@@ -1042,7 +1028,6 @@ body {
 
     .filter-options {
         border: solid 2px salmon;
-        padding-bottom: 2rem;
     }
 
     /*Transaction list */
@@ -1101,7 +1086,7 @@ body {
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        margin-right: 0.75rem;
+        margin-right: 0.25rem;
     }
 }
 
@@ -1183,8 +1168,8 @@ body {
 
     .transactions-content {
         display: grid;
-        grid-template-rows: 1.5fr 1fr 1fr 0.5fr 6.5fr;
-        gap: 0.5rem;
+        grid-template-rows: 1fr 1fr 1fr 0.25fr 6.5fr;
+        gap: 0.7rem;
         width: 83vw;
         padding: 0.6rem 1.25rem 1.25rem 1.25rem;
         background-color: blue;
@@ -1194,15 +1179,14 @@ body {
     /* hero section */
     
     .transactions-hero {
-        width: 65rem;
-        margin-bottom: 1.3rem;
+        width: 65rem; 
     }
 
     .transactions-title {
         font-size: 40px;
         font-family: "poppins";
         margin-bottom: 0;
-        padding-top: 2.25rem;
+        padding-top: 0.5rem;
         padding-bottom: 0;
     }
 
@@ -1217,13 +1201,11 @@ body {
     .transactions-header {
         display: grid;
         grid-template-columns: 4fr 1fr;
-        align-items: flex-start;
-        padding-bottom: 0.4rem;
+        align-items: center; 
     }
 
     .transactions-heading {
         font-size: 25px;
-        margin-top: 1.2rem;
         margin-bottom: 0;
     }
 
@@ -1264,23 +1246,22 @@ body {
     .transactions-summary {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 0.5rem; 
+        gap: 1rem; 
     }
 
     .summary-card {
-        padding: 0.5rem 1rem 0.5rem 1rem;
+        padding: 0 1rem 0 1rem;
         border-radius: 0.2rem;
         border: solid 2px salmon;
     }
 
     .summary-card-title {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0;
         font-size: 25px;
     }
 
     .summary-card-value {
         font-size: 18px;
-        padding-bottom: 0.2rem;
     }
 
     /* search & filter section */
@@ -1288,7 +1269,7 @@ body {
     .transactions-controls {
         display: grid;
         grid-template-columns: auto auto;
-        gap: 0.5rem; 
+        gap: 1rem; 
     }
 
     .search-box {
@@ -1312,7 +1293,6 @@ body {
     }
 
     .filter-options {
-        height: 3rem;
         border: solid 2px salmon;
     }
 
@@ -1328,7 +1308,6 @@ body {
     .transaction-card {
         display: flex;
         align-items: center;
-        justify-content: space-around;
         border: red solid 1px;
         border-radius: 5px;
     }
@@ -1340,7 +1319,7 @@ body {
 
     .transaction-card-info {
         width: 30rem;
-        margin-right: 15rem;
+        margin-right: 20rem;
     }
 
     .transaction-card-title{
@@ -1368,8 +1347,6 @@ body {
 
     .transaction-card-btn {
         height: 2rem;
-        margin-right: 0.5rem;
-        padding: 0 0.4rem 0 0.4rem;
         border: none;
         border-radius: 5px;
         cursor: pointer;
@@ -1469,8 +1446,6 @@ body {
     
     .transactions-hero {
         width: 65rem;
-        padding-top: 0.85rem;
-        padding-bottom: 1.2rem;
     }
 
     .transactions-title {
@@ -1489,10 +1464,8 @@ body {
 
     .transactions-header {
         display: grid;
-        grid-template-columns: 4fr 1fr;
-        align-items: flex-start;
-        padding-top: 1.4rem;
-        padding-bottom: 3rem;
+        grid-template-columns: 7fr 1fr;
+        align-items: center;
     }
 
     .transactions-heading {
@@ -1548,15 +1521,12 @@ body {
     }
 
     .summary-card-title {
-        height: 6rem;
-        padding-top: 1.5rem;
         margin-bottom: 0;
-        font-size: 30px;
+        font-size: 35px;
     }
 
     .summary-card-value {
-        font-size: 40px;
-        padding-bottom: 2rem;
+        font-size: 30px;
     }
 
     /* search & filter section */
@@ -1589,7 +1559,6 @@ body {
     }
 
     .filter-options {
-        height: 6rem;
         border: solid 2px salmon;
     }
 
@@ -1605,7 +1574,6 @@ body {
     .transaction-card {
         display: flex;
         align-items: center;
-        justify-content: space-around;
         border: red solid 1px;
         border-radius: 5px;
     }
@@ -1617,6 +1585,7 @@ body {
 
     .transaction-card-info {
         width: clamp(40rem, 48vw, 80rem);
+        margin-right: 15rem;
     }
 
     .transaction-card-title{
@@ -1646,7 +1615,6 @@ body {
     .transaction-card-btn {
         height: 3.25rem;
         width: 8rem;
-        margin-right: 2rem;
         font-size: 18px;
         border: none;
         border-radius: 5px;

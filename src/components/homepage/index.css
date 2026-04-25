@@ -47,13 +47,18 @@
     .nav-item {
         height: 2rem;
         width: 2rem;
-        padding-left: 0.3rem;
-        list-style: none;
         display: flex;
+        justify-content: center;
         align-items: center;
+        padding: 0;
+        list-style: none;
         border-radius: 10rem;
         border: solid 1px black;
         cursor: pointer;
+    }
+
+    .link-container {
+        text-decoration: none;
     }
 
     .nav-icon {
@@ -230,12 +235,18 @@
     }
 
     .nav-item {
-        padding-left: 0.3rem;
-        list-style: none;
         display: flex;
         align-items: center;
+        padding-left: 0.3rem;
+        list-style: none; 
         border: solid 1px black;
         cursor: pointer;
+    }
+
+    .link-container {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
     }
 
     .nav-icon {
@@ -405,12 +416,18 @@
     }
 
     .nav-item {
-        padding-left: 0.3rem;
-        list-style: none;
         display: flex;
         align-items: center;
+        padding-left: 0.3rem;
+        list-style: none; 
         border: solid 1px black;
         cursor: pointer;
+    }
+
+    .link-container {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
     }
 
     .nav-icon {
@@ -578,12 +595,18 @@
     }
 
     .nav-item {
-        padding-left: 0.3rem;
-        list-style: none;
         display: flex;
         align-items: center;
+        padding-left: 0.3rem;
+        list-style: none;
         border: solid 1px black;
         cursor: pointer;
+    }
+
+    .link-container {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
     }
 
     .nav-icon {
@@ -752,12 +775,18 @@
     }
 
     .nav-item {
-        padding-left: 0.3rem;
-        list-style: none;
         display: flex;
         align-items: center;
+        padding-left: 0.3rem;
+        list-style: none;
         border: solid 1px black;
         cursor: pointer;
+    }
+
+    .link-container {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
     }
 
     .nav-icon {
@@ -924,12 +953,20 @@
 
     .nav-item {
         height: 4rem;
-        padding-left: 0.3rem;
-        list-style: none;
         display: flex;
         align-items: center;
+        padding-left: 0.3rem;
+        list-style: none;
         border: solid 1px black;
         cursor: pointer;
+    }
+
+    .link-container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
     }
 
     .nav-icon {
