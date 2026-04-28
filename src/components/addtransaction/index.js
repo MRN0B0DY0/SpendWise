@@ -65,8 +65,69 @@ const Addtransactions = () => {
                 </div>
             </div>
 
-            <div>
-                <h1>Add Transaction Page</h1>
+            <div className="add-transactions-content">
+                {/*hero section*/}
+                <div className="add-transaction-hero">
+                    <h1 className="add-transaction-hero-title">Add Transaction</h1>
+                </div>
+                {/*header section */}
+                <div className="add-transaction-header">
+                    <p className="add-transaction-header-title">
+                        Record a new income or expense transaction
+                    </p>
+                </div>
+                {/*form section*/}
+                <div className="add-transaction-form-container">
+                    <form className="add-transaction-form">
+
+                        <div className="form-group">
+                            <label for="expenseType" className="form-label">Type</label>
+                            <select id="expenseType" className="form-select">
+                                <option>Income</option>
+                                <option>Expense</option>
+                            </select>
+                        </div>
+
+                        <div className="form-group">
+                            <label for="amount" className="form-label">Amount</label>
+                            <input type="text" id="amount" className="form-input" placeholder="Amount"/>
+                        </div>
+
+                        <div className="form-group">
+                            <label for="transferCategory" className="form-label">Category</label>
+                            <select id="transferCategory" className="form-select">
+                                <option>Entertainment</option>
+                                <option>Salary</option>
+                                <option>Bills</option>
+                                <option>Food</option>
+                                <option>Travel</option>
+                            </select>
+                        </div>
+
+                        <div className="form-group">
+                            <label for="transferDate" className="form-label">Date</label>
+                            <input type="date" id="transferDate" className="form-input"/>
+                        </div>
+
+                        <div className="form-group">
+                            <label for="transferPaymentType" className="form-label">Payment Method</label>
+                            <select id="transferPaymentType" className="form-select">
+                                <option>Credit Card</option>
+                                <option>Bank Transfer</option>
+                                <option>UPI</option>
+                                <option>Cash</option>
+                                <option>Debit Card</option>
+                            </select>
+                        </div>
+
+                        <div className="form-actions">
+                            <button type="button" className="btn btn-secondary">Cancel</button>
+                            <button type="submit" className="btn btn-primary">Submit</button>
+                        </div>
+
+                    </form>
+                </div>
+
             </div>
         </div>
     )

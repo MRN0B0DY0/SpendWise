@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="addtransactions.css">
+    <title>Add Transactions</title>
+</head>
+<body>
+    <div class="add-transactions">
+        <div class="nav-menu">
+            <div class="nav-brand">
+                <div>
+                    <img src="logo.png" alt="Logo" class="nav-logo" />
+                </div>
+                <div class="nav-brand-name">
+                    <h1 class="nav-title">SpendWise</h1>
+                    <p class="nav-subtitle">Finance Tracker</p>
+                </div>
+            </div>
+            <div>
+                <ul class="nav-links-list">
+                    <li class="nav-item">
+                        <img src="dashboard-icon.png" alt="Dashboard Icon" class="nav-icon" />
+                        <a href="/dashboard" class="nav-link">Dashboard</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <img src="transactions-icon.png" alt="Transactions Icon" class="nav-icon" />
+                        <a href="/transactions" class="nav-link">Transactions</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <img src="add-transaction-icon.png" alt="Add Transaction Icon" class="nav-icon" />
+                        <a href="/add-transaction" class="nav-link">Add Transaction</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <img src="budget-planner-icon.png" alt="Budget Planner Icon" class="nav-icon" />
+                        <a href="/budget-planner" class="nav-link">Budget Planner</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <img src="reports-icon.png" alt="Reports Icon" class="nav-icon" />
+                        <a href="/reports" class="nav-link">Reports</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <img src="profile-icon.png" alt="Profile Icon" class="nav-icon" />
+                        <a href="/profile" class="nav-link">Profile</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="add-transactions-content">
+
+            <div class="add-transaction-hero">
+                <h1 class="add-transaction-hero-title">Add Transaction</h1>
+            </div>
+
+            <div class="add-transaction-header">
+                <p class="add-transaction-header-title">
+                    Record a new income or expense transaction
+                </p>
+            </div>
+
+            <div class="add-transaction-form-container">
+                <form class="add-transaction-form">
+
+                    <div class="form-group">
+                        <label for="expenseType" class="form-label">Type</label>
+                        <select id="expenseType" class="form-select">
+                            <option>Income</option>
+                            <option>Expense</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="amount" class="form-label">Amount</label>
+                        <input type="text" id="amount" class="form-input" placeholder="Amount">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="transferCategory" class="form-label">Category</label>
+                        <select id="transferCategory" class="form-select">
+                            <option>Entertainment</option>
+                            <option>Salary</option>
+                            <option>Bills</option>
+                            <option>Food</option>
+                            <option>Travel</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="transferDate" class="form-label">Date</label>
+                        <input type="date" id="transferDate" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="transferPaymentType" class="form-label">Payment Method</label>
+                        <select id="transferPaymentType" class="form-select">
+                            <option>Credit Card</option>
+                            <option>Bank Transfer</option>
+                            <option>UPI</option>
+                            <option>Cash</option>
+                            <option>Debit Card</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

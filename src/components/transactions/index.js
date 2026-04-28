@@ -84,11 +84,11 @@ const Transactions = () => {
                         Track, search, and organize your transaction history
                     </p>
                 </div>
-                <div className="transactions-header-action">
+                <Link to="/add-transaction" className="transactions-header-action">
                     <img src={addtransactionicon} alt="Add Transaction" className="transactions-add-icon" />
                     <p className="transactions-add-btn">Add Transaction</p>
                     <img src={arrowicon} alt="arrow" className="transactions-arrow-icon" />
-                </div>
+                </Link>
             </div>
 
             {/* Summart Section */}
