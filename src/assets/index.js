@@ -5,11 +5,17 @@ import profileicon from './images/profileicon.png'
 import reportsicon from './images/reportsicon.png'
 import transactionsicon from './images/transactionsicon.png'
 import logo from './images/logo.png'
-//transactio page image
+//transaction page icon
 import arrowicon from './images/arrowicon.png'
 import searchicon from './images/searchicon.png'
-import transactionimage1 from './images/transaction1.png'
-import transactionimage2 from './images/transaction2.png'
+import deleteicon from './images/deleteicon.png'
+import billicon from './images/billicon.png'
+import travelicon from './images/travelicon.png'
+import entertainmenticon from './images/entertainmenticon.png'
+import foodicon from './images/foodicon.png'
+import salaryicon from './images/salaryicon.png'
+//budget page icon
+import rupeeicon from './images/rupeeicon.png'
 
 export {
     addtransactionicon,
@@ -21,6 +27,11 @@ export {
     logo,
     arrowicon,
     searchicon,
-    transactionimage1,
-    transactionimage2
+    billicon,
+    travelicon,
+    entertainmenticon,
+    foodicon,
+    salaryicon,
+    deleteicon,
+    rupeeicon
 }

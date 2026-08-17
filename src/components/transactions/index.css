@@ -2,6 +2,30 @@
     box-sizing: border-box;
 }
 
+:root{
+ 
+    --primary: #2563eb;
+    --primary-light: #dbeafe;
+
+    --success: #16a34a;
+    --success-light: #dcfce7;
+ 
+    --danger: #dc2626;
+    --danger-light: #fee2e2;
+ 
+    --bg-main: #F8FAFC;
+    --bg-card: #EFF6FF;
+    --bg-sidebar: #111827;
+
+    --navbar-name: #ffffff;    
+    --text-primary: #0F172A;
+    --text-secondary: #64748B;
+
+    --border: #E2E8F0;
+ 
+    --hover: #4F46E5;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -15,6 +39,7 @@ body {
     display: flex; 
     font-family: "inter";
     cursor: default;
+    background-color: var(--bg-main);
 }
 
 .transactions-header-action {
@@ -22,74 +47,88 @@ body {
     color: inherit;
 }
 
+.nav-item{
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-title,
+.nav-link,
+.nav-subtitle {
+    color: var(--navbar-name);
+}
+
+.nav-item:hover,
+.transactions-header-action:hover,
+.transaction-card-btn:hover {
+    background-color: var(--hover);
+}
+
+.transactions-header,
+.summary-card,
+.search-box,
+.filter-options {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.transaction-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+}
+
+.transactions-header-action,
+.transaction-card-btn {
+    background-color: var(--bg-sidebar);
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.transactions-title{
+    color: #0f172a;
+}
+
+.transactions-subtitle,
+.transactions-description,
+.transaction-card-meta,
+.filter-options-input,
+.transaction-card-type {
+    color: var(--text-secondary);
+}
+
+.transactions-heading,
+.transaction-card-title,
+.summary-card-title{
+    color: #0f172a;
+}
+
+.summary-card-value,
+.transaction-card-amount{
+    color: #1e293b;
+}
+
+.filter-options-input {
+    height: 100%;
+    width: 100%;
+}
+
+.delete-icon {
+    height: 20px;
+}
+
 @media  screen and (max-width:640px) {
-    .nav-menu {
-        width: 15vw;
-        padding: 1rem;
-        padding-top: 2.5rem;
-        border-right: solid 2px #ccc;
-        background-color: slategray;
-    }
-
-    .nav-brand {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .nav-logo {
-        width: 3rem;
-    }
-
-    .nav-brand-name {
-        display: none;
-    }
-
-    .nav-links-list {
-        padding-left: 0;
-        margin-top: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .nav-item {
-        height: 2rem;
-        width: 2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-        list-style: none;
-        border-radius: 10rem;
-        border: solid 1px black;
-        cursor: pointer;
-    }
-
-    .link-container {
-        text-decoration: none;
-    }
-
-    .nav-icon {
-        height: 1.25rem;
-    }
-
-    .nav-link {
-        display: none;
-        color: black;
-        text-decoration: none;
-    }
-
     /* main content styles */
 
     .transactions-content {
         display: grid;
-        grid-template-rows: 0.9fr 0.5fr 1fr 0.5fr 5.5fr;
+        grid-template-rows: 0.9fr 1fr 1fr 0.5fr 5.5fr;
         gap: 0.5rem;
         width: 85vw;
         padding: 0.6rem 1.25rem 1.25rem 1.25rem;
-        background-color: blue;
         overflow-y: auto;
     }
 
@@ -117,50 +156,43 @@ body {
 
     .transactions-header {
         display: grid;
-        grid-template-columns: 1.25fr 1fr;
-    }
-
-    .transactions-header-text {
-        margin-right: 0.25rem;
+        grid-template-columns: 1.15fr 1fr;
+        gap: 0.25rem;
+        align-items: center;
+        padding: 0.5rem;
     }
 
     .transactions-heading {
         font-size: 15px;
-        margin-top: 0.1rem;
-        margin-bottom: 0;
     }
 
     .transactions-description {
-        font-size: 12px;
-        margin-top: 0.25rem;
-        padding-top: 0;
+        font-size: 9px;
     }
 
     .transactions-header-action {
         height: 1.75rem;
-        display: flex;
-        justify-content: space-around;
+        display: grid;
+        grid-template-columns: 1fr 10fr 1fr;
         align-items: center;
+        gap: 0.15rem;
         padding: 0.5rem;
         cursor: pointer;
         border-radius: 0.2rem;
-        border: salmon solid 2px;
     }
 
     .transactions-add-icon {
         height: 0.75rem;
-        margin: 0.1rem;
     }
 
     .transactions-add-btn {
-        font-size: 10px;
+        font-size: 9px;
+        text-align: center;
         font-weight: bold;
-        margin: 0.1rem 0 0.1rem 0.1rem;
     }
 
     .transactions-arrow-icon {
         height: 0.75rem;
-        margin: 0.1rem 0.1rem 0.1rem 0;
     }
 
     /* summary card */
@@ -172,20 +204,16 @@ body {
     }
 
     .summary-card {
-        padding: 0 1rem 0 1rem;
-        border-radius: 0.2rem;
-        border: solid 2px salmon;
+        padding: 0.5rem;
     }
 
     .summary-card-title {
-        height: 2.2rem;
-        margin-top: 0.5rem;
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .summary-card-value {
         font-size: 12px;
-        margin-bottom: 0.3rem;
+        padding-top: 0.5rem;
     }
 
     /* search & filter section */
@@ -200,9 +228,6 @@ body {
         display: flex;
         justify-content: center;;
         align-items: center;
-        background-color: #ffffff;
-        border-radius: 0.2rem;
-        border: solid 2px salmon;
     }
 
     .search-icon {
@@ -217,11 +242,14 @@ body {
         height: 100%;
         width: 100%;
         font-size: 12px;
+        padding-left: 0.5rem;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border: none;
     }
 
     .filter-options {
         display: none ;
-        border: solid 2px salmon;
     }
 
     /*Transaction list */
@@ -236,8 +264,6 @@ body {
     .transaction-card {
         display: flex;
         align-items: center;
-        border: red solid 1px;
-        border-radius: 5px;
     }
 
     .transaction-card-image {
@@ -258,7 +284,7 @@ body {
     }
 
     .transaction-card-meta {
-        font-size: 10px;
+        font-size: 9px;
         padding: 0;
         margin: 0.2rem 0 0 0;
     }
@@ -271,474 +297,116 @@ body {
     }
 
     .transaction-card-amount {
-        font-size: 16px;
-        width: 4rem; 
-        margin-right: 0; 
+        font-size: 15px;
+        width: fit-content; 
+        margin-right: 0.3rem;
     }
 
     .transaction-card-btn {
         height: 2rem;
-        font-size: 10px;
+        width: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border: none;
         border-radius: 5px;
         cursor: pointer;
         margin-right: 0.5rem;
+    }
+
+    .delete-icon {
+        height: 1rem;
     }
 }
 
 @media screen and (min-width:641px) and (max-width:768px) {
-    .nav-menu {
-        width: 20vw;
-        padding: 1rem;
-        padding-top: 1.5rem;
-        border-right: solid 2px #ccc;
-        background-color: slateblue;
-    }
-
-    .nav-brand {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .nav-logo {
-        width: 1.75rem;
-    }
-
-    .nav-brand-name {
-        width: 10rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        height: 3rem;
-        padding-left: 0.25rem;
-    }
-
-    .nav-title {
-        margin: 0;
-        text-align: center;
-        font-size: 16px;
-        font-family: "poppins";
-    }
-
-    .nav-subtitle {
-        margin: 0;
-        font-size: 8px;
-        text-align: center;
-    }
-
-    .nav-links-list {
-        min-width: 6.5rem;
-        max-width: 8rem;
-        padding-left: 0;
-        margin-top: 2.1rem;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0.8rem;
-    }
-
-    .nav-item {
-        display: flex;
-        align-items: center;
-        padding-left: 0.3rem;
-        list-style: none; 
-        border: solid 1px black;
-        cursor: pointer;
-    }
-
-    .link-container {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-    }
-
-    .nav-icon {
-        height: 1.25rem;
-        padding-right: 0.25rem;
-    }
-
-    .nav-link {
-        font-size: 11px;
-        color: black;
-        text-decoration: none;
-    }
-
     /* main content styles */
 
     .transactions-content {
         display: grid;
-        grid-template-rows: 1fr 0.5fr 1fr 0.25fr 9fr;
+        grid-template-rows: 1fr 1fr 1fr 0.65fr 9fr;
         gap: 0.5rem;
         width: 85vw;
         padding: 0.6rem 1.25rem 1.25rem 1.25rem;
-        background-color: blue;
         overflow-y: auto;
     }
 
     /* hero section */
     
     .transactions-hero {
-        width: 30rem;
-        padding-bottom: 1.3rem;
-    }
-
-    .transactions-title {
-        font-size: 25px;
-        font-family: "poppins";
-        margin-bottom: 0;
-        margin-top: 1.3rem;
-    }
-
-    .transactions-subtitle {
-        font-size: 13px;
-        margin-top: 0;
-        padding-top: 0;
-    }
-
-    /* header section */
-
-    .transactions-header {
-        display: grid;
-        grid-template-columns: 2.35fr 1fr; 
-    }
-
-    .transactions-heading {
-        font-size: 15px;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    .transactions-description {
-        font-size: 12px;
-        margin-top: 0.5rem;
-        padding-top: 0;
-    }
-
-    .transactions-header-action {
-        height: 2rem;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 0.5rem;
-        cursor: pointer;
-        border-radius: 0.2rem;
-        border: salmon solid 2px;
-    }
-
-    .transactions-add-icon {
-        height: 1.25rem;
-        margin: 0.1rem;
-    }
-
-    .transactions-add-btn {
-        font-size: 12px;
-        font-weight: bold;
-        margin: 0.1rem 0 0.1rem 0.1rem;
-    }
-
-    .transactions-arrow-icon {
-        height: 1.25rem;
-        margin: 0.1rem 0.1rem 0.1rem 0;
-    }
-
-    /* summary card */
-
-    .transactions-summary {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0.5rem; 
-    }
-
-    .summary-card {
-        padding: 0 1rem 0 1rem;
-        border-radius: 0.2rem;
-        border: solid 2px salmon;
-    }
-
-    .summary-card-title {
-        margin-top: 0.5rem;
-        margin-bottom: 1rem;
-        font-size: 12px;
-    }
-
-    .summary-card-value {
-        font-size: 15px;
-        padding-bottom: 0.6rem;
-    }
-
-    /* search & filter section */
-
-    .transactions-controls {
-        display: grid;
-        grid-template-columns: auto auto;
-        gap: 0.5rem; 
-    }
-
-    .search-box {
-        display: flex;
-        justify-content: center;;
-        align-items: center;
-        background-color: #ffffff;
-        border-radius: 0.2rem;
-        border: solid 2px salmon;
-    }
-
-    .search-icon {
-        margin-left: 1.25rem;
-        margin-right: 1.25rem;
-        height: 1.25rem;
-    }
-
-    .search-box-input {
-        height: 100%;
-        width: 100%;
-        font-size: 12px;
-    }
-
-    .filter-options {
-        border: solid 2px salmon;
-    }
-
-    /*Transaction list */
-
-    .transactions-list{
-        display: grid;
-        grid-auto-rows: 3.5rem;
-        gap: 0.5rem;
-        overflow-y: auto;
-    }
-
-    .transaction-card {
-        display: flex;
-        align-items: center;
-        border: red solid 1px;
-        border-radius: 5px;
-    }
-
-    .transaction-card-image {
-        height: 1.5rem;
-        padding: 0 1rem 0 1rem;
-    }
-
-    .transaction-card-info {
-        width: auto;
-        margin-right: 0;
-        flex: 1;
-    }
-
-    .transaction-card-title{
-        font-size: 15px;
-        padding: 0;
-        margin: 0.2rem 0 0 0;
-    }
-
-    .transaction-card-meta {
-        font-size: 12px;
-        padding: 0;
-        margin: 0.2rem 0 0 0;
-    }
-
-    .transaction-card-type {
-        font-size: 15px; 
-        width: 5rem;
-        margin-right: 1rem;
-    }
-
-    .transaction-card-amount {
-        font-size: 20px;
-        width: 5rem; 
-        margin-right: 1rem;
-    }
-
-    .transaction-card-btn {
-        height: 2rem;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-right: 0.5rem;
-    }
-}
-
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-    .nav-menu {
-        width: 15vw;
-        padding: 1rem;
-        padding-top: 2.5rem;
-        border-right: solid 2px #ccc;
-        background-color: salmon;
-    }
-
-    .nav-brand {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .nav-logo {
-        width: 2rem;
-    }
-
-    .nav-brand-name {
-        width: 10rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        height: 3rem;
-        padding-left: 0.25rem;
-    }
-
-    .nav-title {
-        margin: 0;
-        text-align: center;
-        font-size: 20px;
-        font-family: "poppins";
-    }
-
-    .nav-subtitle {
-        margin: 0;
-        font-size: 10px;
-        text-align: center;
-    }
-
-    .nav-links-list {
-        width: 6.85rem;
-        padding-left: 0;
-        margin-top: 2.2rem;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0.8rem;
-    }
-
-    .nav-item {
-        display: flex;
-        align-items: center;
-        padding-left: 0.3rem;
-        list-style: none; 
-        border: solid 1px black;
-        cursor: pointer;
-    }
-
-    .link-container {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-    }
-
-    .nav-icon {
-        height: 1.5rem;
-        padding-right: 0.25rem;
-    }
-
-    .nav-link {
-        font-size: 11px;
-        color: black;
-        text-decoration: none;
-    }
-
-    /* main content styles */
-
-    .transactions-content {
-        display: grid;
-        grid-template-rows: 0.75fr 0.5fr 0.75fr 0.25fr 6.5fr;
-        gap: 0.5rem;
-        width: 85vw;
-        padding: 0.6rem 1.25rem 1.25rem 1.25rem;
-        background-color: blue;
-        overflow-y: auto;
-    }
-
-    /* hero section */
-    
-    .transactions-hero {
-        width: 30rem;
-        padding-bottom: 0.5rem;
-    }
+        padding-top: 2px;
+        padding-bottom: 14px;
+    } 
 
     .transactions-title {
         font-size: 30px;
         font-family: "poppins";
-        margin-bottom: 0;
-        margin-top: 2.2rem;
+        margin-top: 1.15rem;
     }
 
     .transactions-subtitle {
-        font-size: 16px;
-        margin-top: 0;
-        padding-top: 0;
+        font-size: 15px;
     }
 
     /* header section */
 
     .transactions-header {
         display: grid;
-        grid-template-columns: 3.1fr 1fr;
+        align-items: center;
+        grid-template-columns: 2.35fr 1fr;
+        padding: 0.5rem;
     }
 
     .transactions-heading {
-        font-size: 18px;
-        margin-top: 0.3rem;
-        margin-bottom: 0;
+        font-size: 17px;
     }
 
     .transactions-description {
-        font-size: 15px;
-        margin-top: 0.5rem;
-        padding-top: 0;
+        font-size: 12px;
     }
 
     .transactions-header-action {
+        height: 2rem;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        margin-top: 1.5rem;
         padding: 0.5rem;
         cursor: pointer;
-        border-radius: 0.2rem;
-        border: salmon solid 2px;
+        border-radius: 0.5rem;
     }
 
     .transactions-add-icon {
         height: 1.25rem;
-        margin: 0.1rem;
     }
 
     .transactions-add-btn {
-        font-size: 15px;
+        font-size: 11px;
         font-weight: bold;
-        margin: 0.1rem 0 0.1rem 0.1rem;
     }
 
     .transactions-arrow-icon {
         height: 1.25rem;
-        margin: 0.1rem 0.1rem 0.1rem 0;
     }
 
     /* summary card */
 
     .transactions-summary {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0.5rem; 
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 0.5rem;
     }
 
     .summary-card {
-        padding: 0 1rem 0 1rem;
-        border-radius: 0.2rem;
-        border: solid 2px salmon;
+        padding: 0.5rem;
     }
 
     .summary-card-title {
-        height: 1.5rem;
-        font-size: 17px;
-        margin-top: 0.5rem;
+        font-size: 13px;
     }
 
     .summary-card-value {
-        margin-top: 1.5rem;
-        margin-bottom: 1.6rem;
-        font-size: 20px;
+        font-size: 12px;
+        padding-top: 0.25rem;
     }
 
     /* search & filter section */
@@ -753,9 +421,6 @@ body {
         display: flex;
         justify-content: center;;
         align-items: center;
-        background-color: #ffffff;
-        border-radius: 0.2rem;
-        border: solid 2px salmon;
     }
 
     .search-icon {
@@ -767,12 +432,17 @@ body {
     .search-box-input {
         height: 100%;
         width: 100%;
-        font-size: 13px;
+        padding-left: 0.5rem;
+        font-size: 12px;
+        border: none;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 
-    .filter-options {
-        border: solid 2px salmon;
-        padding-bottom: 1rem;
+    .filter-options-input {
+        padding-left: 0.5rem;
+        border: none;
+        border-radius: 10px;
     }
 
     /*Transaction list */
@@ -785,140 +455,236 @@ body {
     }
 
     .transaction-card {
-        display: flex;
+        display: grid;
+        grid-template-columns: 0.75fr 6fr 1fr 1fr 1fr;
+        gap: 0.5rem;
+        padding: 0 0.75rem 0 0.75rem;
         align-items: center;
-        border: red solid 1px;
-        border-radius: 5px;
     }
 
     .transaction-card-image {
         height: 1.5rem;
-        padding: 0 1rem 0 1rem;
     }
 
-    .transaction-card-info {
-        width: auto;
-        margin-right: 0;
-        flex: 1;
+    .transaction-card-title{
+        font-size: 15px;
+    }
+
+    .transaction-card-meta {
+        font-size: 12px;
+        margin-top: 0.2rem;
+    }
+
+    .transaction-card-type {
+        width: 4rem;
+        font-size: 15px;
+    }
+
+    .transaction-card-amount {
+        width: 5rem; 
+        font-size: 20px;
+    }
+
+    .transaction-card-btn {
+        height: 2rem;
+        width: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* main content styles */
+
+    .transactions-content {
+        width: 85vw;
+        display: grid;
+        grid-template-rows: 1.9fr 1fr 1fr 0.75fr 10fr;
+        gap: 0.5rem;
+        padding: 1rem;
+        overflow-y: auto;
+    }
+
+    /* hero section */
+    
+    .transactions-hero {
+        padding-top: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .transactions-title {
+        font-size: 35px;
+        font-family: "poppins";
+    }
+
+    .transactions-subtitle {
+        font-size: 18px;;
+    }
+
+    /* header section */
+
+    .transactions-header {
+        display: grid;
+        grid-template-columns: 3fr 1.15fr;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+    }
+
+    .transactions-heading {
+        font-size: 22px;;
+    }
+
+    .transactions-description {
+        font-size: 16px;
+    }
+
+    .transactions-header-action {
+        height: 2.25rem;
+        padding: 0.5rem;
+        display: grid;
+        grid-template-columns: 1fr 5fr 1fr;
+        gap: 0.2rem;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+
+    .transactions-add-icon {
+        height: 1.25rem;
+    }
+
+    .transactions-add-btn {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .transactions-arrow-icon {
+        height: 1.25rem;
+    }
+
+    /* summary card */
+
+    .transactions-summary {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
+    }
+
+    .summary-card {
+        padding: 0.5rem;
+    }
+
+    .summary-card-title {
+        font-size: 18px;
+    }
+
+    .summary-card-value {
+        font-size: 16px;
+        padding-top: 0.5rem;
+    }
+
+    /* search & filter section */
+
+    .transactions-controls {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .search-box {
+        display: flex;
+        justify-content: center;;
+        align-items: center;
+    }
+
+    .search-icon {
+        margin-left: 1.25rem;
+        margin-right: 1.25rem;
+        height: 1.25rem;
+    }
+
+    .search-box-input {
+        height: 100%;
+        width: 100%;
+        font-size: 13px;
+        padding-left: 0.5rem;
+        border: none;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .filter-options-input {
+        padding-left: 0.5rem;
+        border: none;
+        border-radius: 10px;
+    }
+
+    /*Transaction list */
+
+    .transactions-list{
+        display: grid;
+        grid-auto-rows: 3.5rem;
+        gap: 0.5rem;
+        overflow-y: auto;
+    }
+
+    .transaction-card {
+        display: grid;
+        grid-template-columns: 0.75fr 6.25fr 1fr 1fr 1fr;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .transaction-card-image {
+        height: 1.5rem;
+        margin-left: 1rem;
     }
 
     .transaction-card-title{
         font-size: 18px;
-        padding: 0;
-        margin: 0.2rem 0 0 0;
     }
 
     .transaction-card-meta {
-        font-size: 13px;
-        padding: 0;
-        margin: 0.2rem 0 0 0;
+        font-size: 15px;
     }
 
     .transaction-card-type {
-        font-size: 15px; 
-        width: 5rem;
-        margin-right: 1rem;
+        font-size: 16px; 
+        width: 4.5rem;
     }
 
     .transaction-card-amount {
         font-size: 20px;
         width: 5rem; 
-        margin-right: 1rem;
     }
 
     .transaction-card-btn {
         height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        margin-right: 0.75rem;
     }
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1280px) {
-    .nav-menu {
-        width: 17vw;
-        padding: 2rem;
-        background-color: cyan;
-        border-right: solid 3px #ccc;
-    }
-
-    .nav-brand {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .nav-logo {
-        width: 3rem;
-    }
-
-    .nav-brand-name {
-        width: 20rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        height: 5rem;
-        padding-left: 0.25rem;
-    }
-
-    .nav-title {
-        margin: 0;
-        text-align: center;
-        font-size: 22px;
-        font-family: "poppins";
-    }
-
-    .nav-subtitle {
-        margin: 0;
-        font-size: 10px;
-        text-align: center;
-    }
-
-    .nav-links-list {
-        padding-left: 0;
-        margin-top: 2rem;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1rem; 
-    }
-
-    .nav-item {
-        display: flex;
-        align-items: center;
-        padding-left: 0.3rem;
-        list-style: none;
-        border: solid 1px black;
-        cursor: pointer;
-    }
-
-    .link-container {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-    }
-
-    .nav-icon {
-        height: 1.35rem;
-        padding-right: 0.25rem;
-    }
-
-    .nav-link {
-        font-size: 12px;
-        color: black;
-        text-decoration: none;
-    }
-
     /* main content styles */
 
     .transactions-content {
         display: grid;
-        grid-template-rows: 1fr 1fr 1fr 0.5fr 6.5fr;
+        grid-template-rows: 1fr 1.5fr 1.5fr 0.75fr 6.5fr;
         gap: 0.5rem;
         width: 83vw;
-        padding: 1.25rem 1.25rem 1.25rem 1.25rem;
-        background-color: blue;
+        padding: 1.25rem;
         overflow-y: auto;
     }
 
@@ -927,20 +693,16 @@ body {
     .transactions-hero {
         width: 30rem;
         padding-top: 1.75rem;
+        padding-bottom: 1rem;
     }
 
     .transactions-title {
         font-size: 40px;
         font-family: "poppins";
-        margin-bottom: 0;
-        padding-top: 0;
-        padding-bottom: 0;
     }
 
     .transactions-subtitle {
         font-size: 20px;
-        margin-top: 0;
-        padding-top: 0;
     }
 
     /* header section */
@@ -948,47 +710,39 @@ body {
     .transactions-header {
         display: grid;
         grid-template-columns: 3.1fr 1fr;
-        align-items: flex-start;
-        padding-top: 0.55rem;
-        padding-bottom: 0.9rem;
+        align-items: center;
+        padding: 1rem;
     }
 
     .transactions-heading {
-        font-size: 22px;
-        margin-top: 0;
-        margin-bottom: 0;
+        font-size: 24px;
     }
 
     .transactions-description {
-        font-size: 20px;
-        margin-top: 0.5rem;
-        padding-top: 0;
+        font-size: 18px;
+        padding-top: 0.25rem;
     }
 
     .transactions-header-action {
+        height: 2.25rem;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        padding: 0.5rem;
         cursor: pointer;
-        border-radius: 0.2rem;
-        border: salmon solid 2px;
+        border-radius: 10px;
     }
 
     .transactions-add-icon {
         height: 1.25rem;
-        margin: 0.1rem;
     }
 
     .transactions-add-btn {
         font-size: 16px;
         font-weight: bold;
-        margin: 0.1rem 0 0.1rem 0.1rem;
     }
 
     .transactions-arrow-icon {
         height: 1.25rem;
-        margin: 0.1rem 0.1rem 0.1rem 0;
     }
 
     /* summary card */
@@ -1000,27 +754,23 @@ body {
     }
 
     .summary-card {
-        padding: 0 1rem 0 1rem;
-        border-radius: 0.2rem;
-        border: solid 2px salmon;
+        padding: 1rem;
     }
 
     .summary-card-title {
-        height: 2.5rem;
-        margin-bottom: 0.5rem;
-        font-size: 20px;
+        font-size: 21px;
     }
 
     .summary-card-value {
-        font-size: 22px;
-        padding-bottom: 0.25rem;
+        font-size: 19px;
+        padding-top: 0.75rem;
     }
 
     /* search & filter section */
 
     .transactions-controls {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: 2.5fr 1.5fr;
         gap: 0.5rem;
     }
 
@@ -1028,9 +778,6 @@ body {
         display: flex;
         justify-content: center;;
         align-items: center;
-        background-color: #ffffff;
-        border-radius: 0.2rem;
-        border: solid 2px salmon;
     }
 
     .search-icon {
@@ -1043,199 +790,118 @@ body {
         height: 100%;
         width: 100%;
         font-size: 18px;
+        padding-left: 1rem;
+        border: none;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 
-    .filter-options {
-        border: solid 2px salmon;
-        padding-bottom: 2rem;
+    .filter-options-input {
+        height: 100%;
+        width: 100%;
+        font-size: 18px;
+        padding-left: 1rem;
+        border: none;
+        border-radius: 10px;
     }
 
     /*Transaction list */
 
     .transactions-list{
         display: grid;
-        grid-auto-rows: 3.5rem;
-        gap: 0.5rem;
+        grid-auto-rows: 5rem;
+        gap: 1rem;
         overflow-y: auto;
     }
 
     .transaction-card {
-        display: flex;
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: 0.5fr 6.5fr 1fr 1fr 1fr;
+        gap: 1rem;
         align-items: center;
-        border: red solid 1px;
-        border-radius: 5px;
     }
 
     .transaction-card-image {
         height: 1.5rem;
-        padding: 0 1rem 0 1rem;
-    }
-
-    .transaction-card-info {
-        width: auto;
-        margin-right: 0;
-        flex: 1;
+        padding-left: 0.5rem;
     }
 
     .transaction-card-title{
-        font-size: 20px;
-        padding: 0;
-        margin: 0.2rem 0 0 0;
+        font-size: 21px;
     }
 
     .transaction-card-meta {
-        font-size: 16px;
-        padding: 0;
-        margin: 0.2rem 0 0 0;
+        font-size: 17px;
+        padding-top: 0.25rem;
     }
 
     .transaction-card-type {
-        font-size: 15px; 
+        font-size: 18px; 
         width: 5rem;
-        margin-right: 1rem;
     }
 
     .transaction-card-amount {
-        font-size: 20px;
-        width: 5rem; 
-        margin-right: 1rem;
+        font-size: 21px;
+        width: 5rem;
     }
 
     .transaction-card-btn {
         height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border: none;
-        border-radius: 5px;
+        border-radius: 8px;
         cursor: pointer;
-        margin-right: 0.75rem;
     }
 }
 
 @media screen and (min-width: 1281px) and (max-width: 1536px) {
-    .nav-menu {
-        width: 17vw;
-        padding: 2rem;
-        background-color: yellow;
-        border-right: solid 3px #ccc;
-    }
-
-    .nav-brand {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .nav-logo {
-        width: 3.25rem;
-    }
-
-    .nav-brand-name {
-        width: 20rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        height: 5rem;
-        padding-left: 0.25rem;
-    }
-
-    .nav-title {
-        margin: 0;
-        text-align: center;
-        font-family: "poppins";
-        font-size: 29px;
-    }
-
-    .nav-subtitle {
-        margin: 0;
-        text-align: center;
-        font-size: 12px;
-    }
-
-    .nav-links-list { 
-        padding-left: 0;
-        margin-top: 3.3rem;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .nav-item {
-        display: flex;
-        align-items: center;
-        padding-left: 0.3rem;
-        list-style: none;
-        border: solid 1px black;
-        cursor: pointer;
-    }
-
-    .link-container {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-    }
-
-    .nav-icon {
-        height: 1.5rem;
-        padding-right: 0.5rem;
-    }
-
-    .nav-link {
-        color: black;
-        text-decoration: none;
-    }
-
     /* main content styles */
 
     .transactions-content {
         display: grid;
-        grid-template-rows: 1.5fr 1fr 1fr 0.5fr 6.5fr;
+        grid-template-rows: 1.5fr 1.5fr 1fr 1fr 6.5fr;
         gap: 0.5rem;
         width: 83vw;
         padding: 0.6rem 1.25rem 1.25rem 1.25rem;
-        background-color: blue;
         overflow-y: auto;
     }
 
     /* hero section */
     
     .transactions-hero {
-        width: 65rem;
-        margin-bottom: 1.3rem;
+        margin-bottom: 1.85rem;
     }
 
     .transactions-title {
         font-size: 40px;
         font-family: "poppins";
-        margin-bottom: 0;
-        padding-top: 2.25rem;
-        padding-bottom: 0;
+        padding-top: 2.2rem;
     }
 
     .transactions-subtitle {
-        font-size: 15px;
+        font-size: px;
         margin-top: 0.1rem;
-        padding-top: 0;
     }
 
     /* header section */
 
     .transactions-header {
+        padding: 1rem;
         display: grid;
         grid-template-columns: 4fr 1fr;
-        align-items: flex-start;
-        padding-bottom: 0.4rem;
+        align-items: center;
     }
 
     .transactions-heading {
         font-size: 25px;
-        margin-top: 1.2rem;
-        margin-bottom: 0;
     }
 
     .transactions-description {
         font-size: 18px;
-        margin-top: 0.5rem;
-        padding-top: 0;
+        padding-top: 5px;
     }
 
     .transactions-header-action {
@@ -1244,24 +910,20 @@ body {
         align-items: center;
         padding: 0.5rem;
         cursor: pointer;
-        border-radius: 0.2rem;
-        border: salmon solid 2px;
+        border-radius: 10px;
     }
 
     .transactions-add-icon {
         height: 1.5rem;
-        margin: 0.1rem;
     }
 
     .transactions-add-btn {
         font-size: 18px;
         font-weight: bold;
-        margin: 0.1rem 0 0.1rem 0.1rem;
     }
 
     .transactions-arrow-icon {
         height: 1.5rem;
-        margin: 0.1rem 0.1rem 0.1rem 0;
     }
 
     /* summary section */
@@ -1273,26 +935,23 @@ body {
     }
 
     .summary-card {
-        padding: 0.5rem 1rem 0.5rem 1rem;
-        border-radius: 0.2rem;
-        border: solid 2px salmon;
+        padding: 1rem;
     }
 
     .summary-card-title {
-        margin-bottom: 0.5rem;
         font-size: 25px;
     }
 
     .summary-card-value {
         font-size: 18px;
-        padding-bottom: 0.2rem;
+        padding-top: 0.5rem;
     }
 
     /* search & filter section */
 
     .transactions-controls {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: 3fr 1.5fr;
         gap: 0.5rem; 
     }
 
@@ -1300,9 +959,6 @@ body {
         display: flex;
         justify-content: center;;
         align-items: center;
-        background-color: #ffffff;
-        border-radius: 0.2rem;
-        border: solid 2px salmon;
     }
 
     .search-icon {
@@ -1314,228 +970,142 @@ body {
     .search-box-input {
         height: 100%;
         width: 100%;
+        font-size: 18px;
+        padding-left: 1rem;
+        border: none;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 
-    .filter-options {
-        height: 3rem;
-        border: solid 2px salmon;
+    .filter-options-input {
+        font-size: 18px;
+        padding-left: 1rem;
+        border: none;
+        border-radius: 10px;
     }
 
     /*Transaction list */
 
     .transactions-list{
         display: grid;
-        grid-auto-rows: 3.5rem;
+        grid-auto-rows: 5rem;
         gap: 0.5rem;
         overflow-y: auto;
     }
 
     .transaction-card {
-        display: flex;
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 6fr 1fr 1fr 1fr;
+        gap: 1rem;
         align-items: center;
-        justify-content: space-around;
-        border: red solid 1px;
-        border-radius: 5px;
     }
 
     .transaction-card-image {
-        height: 1.5rem;
-        padding: 0 1rem 0 1rem;
+        height: 2rem;
+        padding-left: 2.5rem;
     }
 
     .transaction-card-info {
         width: 30rem;
-        margin-right: 15rem;
     }
 
     .transaction-card-title{
-        font-size: 18px;
-        padding: 0;
-        margin: 0.2rem 0 0 0;
+        font-size: 20px;
     }
 
     .transaction-card-meta {
-        padding: 0;
-        margin: 0.2rem 0 0 0;
+        font-size: 17px;
     }
 
     .transaction-card-type {
-        font-size: 15px; 
-        width: 5rem;
-        margin-right: 1rem;
+        font-size: 20px; 
+        width: 6rem;
     }
 
     .transaction-card-amount {
         font-size: 20px;
-        width: 5rem; 
-        margin-right: 1rem;
+        width: 6rem;
     }
 
     .transaction-card-btn {
-        height: 2rem;
-        margin-right: 0.5rem;
-        padding: 0 0.4rem 0 0.4rem;
+        height: 3rem;
         border: none;
-        border-radius: 5px;
+        border-radius: 8px;
         cursor: pointer;
+    }
+    
+    .delete-icon {
+        height: 2rem;
     }
 }
 
 @media screen and (min-width: 1537px) {
-    .nav-menu {
-        width: 20vw;
-        padding: 2rem;
-        background-color: pink;
-        border-right: solid 3px #ccc;
-    }
-
-    .nav-brand {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 2rem;
-    }
-
-    .nav-logo {
-        width: 6rem;
-    }
-
-    .nav-brand-name {
-        width: 20rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        height: 5rem;
-        padding-left: 0.25rem;
-    }
-
-    .nav-title {
-        margin: 0;
-        text-align: center;
-        font-family: "poppins";
-        font-size: 50px;
-    }
-
-    .nav-subtitle {
-        margin: 0;
-        text-align: center;
-        font-size: 20px;
-    }
-
-    .nav-links-list { 
-        margin-top: 4.1rem;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .nav-item {
-        height: 4rem;
-        display: flex;
-        align-items: center;
-        padding-left: 0.3rem;
-        list-style: none;
-        border: solid 1px black;
-        cursor: pointer;
-    }
-
-    .link-container {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-    }
-
-    .nav-icon {
-        height: 3rem;
-        padding-right: 0.5rem;
-    }
-
-    .nav-link {
-        font-size: 20px;
-        color: black;
-        text-decoration: none;
-
-    }
-
-    /* main content styles */
+   /* main content styles */
 
     .transactions-content {
         display: grid;
-        grid-template-rows: 2fr 1.5fr 2fr 1fr 10fr;
+        grid-template-rows: 2fr 2fr 2fr 1fr 8fr;
         gap: 1rem;
         width: 83vw;
-        padding: 0.6rem 1.25rem 1.25rem 1.25rem;
-        background-color: blue;
+        padding: 1rem;
         overflow-y: auto;
     }
 
     /* hero section */
     
     .transactions-hero {
-        width: 65rem;
-        padding-top: 0.85rem;
-        padding-bottom: 1.2rem;
+        padding-top: 3.5rem;
+        margin-bottom: 3rem;
     }
 
     .transactions-title {
         font-size: 55px;
         font-family: "poppins";
-        margin-bottom: 0;
-        margin-top: 3rem;
     }
 
     .transactions-subtitle {
         font-size: 25px;
-        margin-top: 0;
     }
 
     /* header section */
 
     .transactions-header {
+        padding: 1rem;
         display: grid;
         grid-template-columns: 4fr 1fr;
-        align-items: flex-start;
-        padding-top: 1.4rem;
-        padding-bottom: 3rem;
+        align-items: center;
     }
 
     .transactions-heading {
         font-size: 35px;
-        margin-top: 0;
-        margin-bottom: 0;
     }
 
     .transactions-description {
         font-size: 20px;
-        margin-top: 0;
-        padding-top: 0;
+        padding-top: 0.5rem;
     }
 
     .transactions-header-action {
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
-        padding: 0.5rem;
+        padding: 1rem;
         cursor: pointer;
-        border-radius: 0.3rem;
-        border: salmon solid 2px;
+        border-radius: 10px;
     }
 
     .transactions-add-icon {
         height: 1.5rem;
-        margin: 0.1rem;
     }
 
     .transactions-add-btn {
-        font-size: 21px;
+        font-size: 20px;
         font-weight: bold;
-        margin: 0.1rem 0 0.1rem 0.1rem;
     }
 
     .transactions-arrow-icon {
         height: 1.5rem;
-        margin: 0.1rem 0.1rem 0.1rem 0;
     }
 
     /* summary section */
@@ -1547,55 +1117,54 @@ body {
     }
 
     .summary-card {
-        padding: 0 1rem 0 1rem;
-        border-radius: 0.3rem;
-        border: solid 2px salmon;
+        padding: 1rem;
     }
 
     .summary-card-title {
-        height: 6rem;
-        padding-top: 1.5rem;
-        margin-bottom: 0;
-        font-size: 30px;
+        font-size: 35px;
     }
 
     .summary-card-value {
-        font-size: 40px;
-        padding-bottom: 2rem;
+        font-size: 30px;
+        padding-top: 1rem;
     }
 
     /* search & filter section */
 
     .transactions-controls {
+        min-height: 4.5rem;
         display: grid;
-        grid-template-columns: auto auto;
-        gap: 1rem; 
+        grid-template-columns: 3fr 1.5fr;
+        gap: 1rem;
     }
 
     .search-box {
         display: flex;
         justify-content: center;;
         align-items: center;
-        background-color: #ffffff;
-        border-radius: 0.2rem;
-        border: solid 2px salmon;
     }
 
     .search-icon {
-        margin-left: 1.5rem;
-        margin-right: 1.5rem;
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
         height: 2.5rem;
     }
 
     .search-box-input {
         height: 100%;
         width: 100%;
-        font-size: 22px;
+        padding-left: 1rem;
+        font-size: 20px;
+        border: none;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 
-    .filter-options {
-        height: 6rem;
-        border: solid 2px salmon;
+    .filter-options-input {
+        font-size: 20px;
+        padding-left: 1rem;
+        border: none;
+        border-radius: 10px;
     }
 
     /*Transaction list */
@@ -1608,54 +1177,48 @@ body {
     }
 
     .transaction-card {
-        display: flex;
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 6fr 1fr 1fr 1fr;
         align-items: center;
-        justify-content: space-around;
-        border: red solid 1px;
-        border-radius: 5px;
     }
 
     .transaction-card-image {
-        height: 2.5rem;
-        padding: 0 1rem 0 1rem;
-    }
-
-    .transaction-card-info {
-        width: clamp(40rem, 48vw, 80rem);
+        height: 3rem;
+        padding-left: 3rem;
     }
 
     .transaction-card-title{
         font-size: 30px;
-        padding: 0;
-        margin: 0.2rem 0 0 0;
     }
 
     .transaction-card-meta {
         font-size: 22px;
-        padding: 0;
-        margin: 0.2rem 0 0 0;
+        padding-top: 0.5rem;
     }
 
     .transaction-card-type {
-        font-size: 22px; 
-        width: 5rem;
-        margin-right: 2.5rem;
+        font-size: 24px; 
+        width: 7rem;
     }
 
     .transaction-card-amount {
         font-size: 30px;
-        width: 5rem; 
-        margin-right: 4rem;
+        width: 7rem;
     }
 
     .transaction-card-btn {
-        height: 3.25rem;
-        width: 8rem;
-        margin-right: 2rem;
-        font-size: 18px;
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border: none;
         border-radius: 5px;
         cursor: pointer;
+    }
+
+    .delete-icon {
+        height: 2.5rem;
     }
 }
 

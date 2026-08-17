@@ -9,8 +9,43 @@ import {
     transactionsicon,
     logo,
 } from '../../assets'
-         
+
+import { addTransaction } from "../../services/transactionApi";
+
+
 const Addtransactions = () => {
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        const transactionData = {
+            transaction_name: document.getElementById("name").value,
+            amount: document.getElementById("amount").value,
+            type: document.getElementById("expenseType").value,
+            category: document.getElementById("transferCategory").value,
+            transaction_date: document.getElementById("transferDate").value,
+            payment_method: document.getElementById("transferPaymentType").value
+        };
+
+        try {
+            await addTransaction(transactionData);
+
+            alert("Transaction Added Successfully");
+
+                document.getElementById("name").value = "";
+                document.getElementById("amount").value = "";
+                document.getElementById("expenseType").selectedIndex = 0;
+                document.getElementById("transferCategory").selectedIndex = 0;
+                document.getElementById("transferDate").value = "";
+                document.getElementById("transferPaymentType").selectedIndex = 0;
+        }
+        catch(error){
+            console.error("failed to add transaction:", error);
+
+            alert("failed to add transaction");
+        }
+    };
+
     return (
         <div className="add-transactions">
             <div className="nav-menu">
@@ -34,7 +69,7 @@ const Addtransactions = () => {
                         <li className="nav-item">
                             <Link to="/transactions" className="link-container">
                                 <img src={transactionsicon} alt="Transactions Icon" className="nav-icon" />
-                                <a href="/transactions" className="nav-link">Transactions</a>
+                                <p className="nav-link">Transactions</p>
                             </Link>
                         </li>
                         <li className="nav-item">
@@ -46,19 +81,19 @@ const Addtransactions = () => {
                         <li className="nav-item">
                             <Link to="/budget-planner" className="link-container">
                                 <img src={budgetplannericon} alt="Budget Planner Icon" className="nav-icon" />
-                                <a href="/budget-planner" className="nav-link">Budget Planner</a>
+                                <p className="nav-link">Budget Planner</p>
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link to="/reports" className="link-container">
                                 <img src={reportsicon} alt="Reports Icon" className="nav-icon" />
-                                <a href="/reports" className="nav-link">Reports</a>
+                                <p className="nav-link">Reports</p>
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link to="/profile" className="link-container">
                                 <img src={profileicon} alt="Profile Icon" className="nav-icon" />
-                                <a href="/profile" className="nav-link">Profile</a>
+                                <p className="nav-link">Profile</p>
                             </Link>
                         </li>
                     </ul>
@@ -78,40 +113,45 @@ const Addtransactions = () => {
                 </div>
                 {/*form section*/}
                 <div className="add-transaction-form-container">
-                    <form className="add-transaction-form">
+                    <form className="add-transaction-form" onSubmit={handleSubmit}>
 
-                        <div className="form-group">
-                            <label for="expenseType" className="form-label">Type</label>
-                            <select id="expenseType" className="form-select">
+                        <div className="add-transaction-form-group">
+                            <label htmlFor="name" className="add-transaction-form-label">Name</label>
+                            <input type="text" id="name" className="add-transaction-form-input" placeholder="Name" required/>
+                        </div>
+
+                        <div className="add-transaction-form-group">
+                            <label htmlFor="amount" className="add-transaction-form-label">Amount</label>
+                            <input type="number" id="amount" className="add-transaction-form-input" placeholder="Amount" min="1" required/>
+                        </div>
+
+                        <div className="add-transaction-form-group">
+                            <label htmlFor="expenseType" className="add-transaction-form-label">Type</label>
+                            <select id="expenseType" className="add-transaction-form-select">
                                 <option>Income</option>
                                 <option>Expense</option>
                             </select>
                         </div>
 
-                        <div className="form-group">
-                            <label for="amount" className="form-label">Amount</label>
-                            <input type="text" id="amount" className="form-input" placeholder="Amount"/>
-                        </div>
-
-                        <div className="form-group">
-                            <label for="transferCategory" className="form-label">Category</label>
-                            <select id="transferCategory" className="form-select">
-                                <option>Entertainment</option>
+                        <div className="add-transaction-form-group">
+                            <label htmlFor="transferCategory" className="add-transaction-form-label">Category</label>
+                            <select id="transferCategory" className="add-transaction-form-select">
                                 <option>Salary</option>
+                                <option>Entertainment</option>
                                 <option>Bills</option>
                                 <option>Food</option>
                                 <option>Travel</option>
                             </select>
                         </div>
 
-                        <div className="form-group">
-                            <label for="transferDate" className="form-label">Date</label>
-                            <input type="date" id="transferDate" className="form-input"/>
+                        <div className="add-transaction-form-group">
+                            <label htmlFor="transferDate" className="add-transaction-form-label">Date</label>
+                            <input type="date" id="transferDate" className="add-transaction-form-input" required/>
                         </div>
 
-                        <div className="form-group">
-                            <label for="transferPaymentType" className="form-label">Payment Method</label>
-                            <select id="transferPaymentType" className="form-select">
+                        <div className="add-transaction-form-group">
+                            <label htmlFor="transferPaymentType" className="add-transaction-form-label">Payment Method</label>
+                            <select id="transferPaymentType" className="add-transaction-form-select">
                                 <option>Credit Card</option>
                                 <option>Bank Transfer</option>
                                 <option>UPI</option>
@@ -120,9 +160,22 @@ const Addtransactions = () => {
                             </select>
                         </div>
 
-                        <div className="form-actions">
-                            <button type="button" className="btn btn-secondary">Cancel</button>
-                            <button type="submit" className="btn btn-primary">Submit</button>
+                        <div className="add-transaction-form-actions">
+                            <button
+                                type="button"
+                                className="add-transaction-btn add-transaction-btn-secondary"
+                                onClick={() => {
+                                    document.getElementById("name").value = "";
+                                    document.getElementById("amount").value = "";
+                                    document.getElementById("expenseType").selectedIndex = 0;
+                                    document.getElementById("transferCategory").selectedIndex = 0;
+                                    document.getElementById("transferDate").value = "";
+                                    document.getElementById("transferPaymentType").selectedIndex = 0;
+                                }}
+                            >
+                                Cancel
+                            </button>
+                            <button type="submit" className="add-transaction-btn add-transaction-btn-primary">Submit</button>
                         </div>
 
                     </form>

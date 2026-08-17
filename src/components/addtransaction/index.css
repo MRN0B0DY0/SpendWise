@@ -2,6 +2,30 @@
     box-sizing: border-box;
 }
 
+:root{
+ 
+    --primary: #2563eb;
+    --primary-light: #dbeafe;
+
+    --success: #16a34a;
+    --success-light: #dcfce7;
+ 
+    --danger: #dc2626;
+    --danger-light: #fee2e2;
+ 
+    --bg-main: #F8FAFC;
+    --bg-card: #EFF6FF;
+    --bg-sidebar: #111827;
+
+    --navbar-name: #ffffff;    
+    --text-primary: #0F172A;
+    --text-secondary: #64748B;
+
+    --border: #E2E8F0;
+ 
+    --hover: #4F46E5;
+}
+
 .add-transactions {
     height: 100vh;
     width: 100vw;
@@ -10,99 +34,66 @@
     display: flex; 
     font-family: "inter";
     cursor: default;
+    background-color: var(--bg-main);
 }
 
+.add-transaction-hero,
+.add-transaction-header {
+    border-bottom: solid var(--border) 2px;
+}
+
+.nav-title,
+.nav-link,
+.nav-subtitle,
+.add-transaction-btn-primary,
+.add-transaction-btn-secondary {
+    color: var(--navbar-name);
+}
+
+.add-transaction-form-input,
+.add-transaction-form-select {
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.nav-item:hover,
+.add-transaction-btn:hover {
+    background-color: var(--hover);
+}
+
+.add-transaction-btn {
+    background-color: var(--bg-sidebar);
+}
+
+
 @media  screen and (max-width:640px) {
-    .nav-menu {
-        width: 15vw;
-        padding: 1rem;
-        padding-top: 2.5rem;
-        border-right: solid 2px #ccc;
-        background-color: slategray;
-    }
-
-    .nav-brand {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .nav-logo {
-        width: 3rem;
-    }
-
-    .nav-brand-name {
-        display: none;
-    }
-
-    .nav-links-list {
-        padding-left: 0;
-        margin-top: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .nav-item {
-        height: 2rem;
-        width: 2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-        list-style: none;
-        border-radius: 10rem;
-        border: solid 1px black;
-        cursor: pointer;
-    }
-
-    .link-container {
-        text-decoration: none;
-    }
-
-    .nav-icon {
-        height: 1.25rem;
-    }
-
-    .nav-link {
-        display: none;
-        color: black;
-        text-decoration: none;
-    }
-
     /* main content styles */
 
     .add-transactions-content {
-        display: flex;
-        flex-direction: column;
-        gap: 0.7rem;
+        display: grid;
+        grid-template-rows: 0.75fr 0.9fr 8fr;
+        gap: 0.5rem;
         width: 85vw;
-        padding: 0.6rem 1.25rem 1.25rem 1.25rem;
-        background-color: blue;
+        padding: 1rem;
         overflow-y: auto;
     }
 
     /*hero section*/
 
     .add-transaction-hero {
-        width: 100%;
-        padding-bottom: 1rem;
-        border-bottom: solid red 0.01rem;
+        padding-top: 1.5rem;
     }
 
     .add-transaction-hero-title {
         font-size: 25px;
-        font-family: "poppins"; 
-        padding-top: 1.9rem; 
+        font-family: "poppins";
     }
 
     /*header section*/
 
-    .add-transaction-header { 
-        padding-top: 1.05rem;
-        padding-bottom: 1rem;
-        border-bottom: solid red 0.01rem;
+    .add-transaction-header {
+        padding-top: 1.5rem;
     }
 
     .add-transaction-header-title {
@@ -112,191 +103,96 @@
     /*form section*/
 
     .add-transaction-form {
-        height: 20rem;
-        margin-top: 1rem;
+        padding-top: 1rem;
         display: grid;
-        grid-template-rows: repeat(1fr);
-        gap: 1rem;
+        grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
+        gap: 0.5rem;
     }
 
-    .form-group {
+    .add-transaction-form-group {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
 
-    .form-label {
+    .add-transaction-form-label {
         display: flex;
-        justify-content: flex-start;
         align-items: center;
-        padding-right: 2rem;
+        font-size: 13px;
+    }
+
+    .add-transaction-form-select,
+    .add-transaction-form-input {
+        min-width: 8rem;
+        border-radius: 10px;
+        padding-left: 0.75rem;
         font-size: 15px;
     }
 
-    .form-select {
-        width: 45vw;
-        border: 0;
-        border-radius: 0.25rem;
-        padding-left: 1rem;
-        font-size: 15px;
-    }
-
-    .form-input {
-        width: 45vw;
-        border: 0;
-        border-radius: 0.25rem;
-        padding-left: 1rem;
-        font-size: 15px;
-    }
-
-    .form-actions {
+    .add-transaction-form-actions {
         margin-top: 1rem;
         text-align: right;
     }
 
-    .btn {
+    .add-transaction-btn {
         height: 2rem;
         width: 5.25rem;
         margin: 0.25rem;
-        font-size: 13px;
+        font-size: 15px;
         border: 0;
-        border-radius: 0.15rem;
+        border-radius: 10px;
         cursor: pointer;
     }
 }
 
 @media screen and (min-width:641px) and (max-width:768px) {
-    .nav-menu {
-        width: 20vw;
-        padding: 1rem;
-        padding-top: 1.5rem;
-        border-right: solid 2px #ccc;
-        background-color: slateblue;
-    }
-
-    .nav-brand {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .nav-logo {
-        width: 1.75rem;
-    }
-
-    .nav-brand-name {
-        width: 10rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        height: 3rem;
-        padding-left: 0.25rem;
-    }
-
-    .nav-title {
-        margin: 0;
-        text-align: center;
-        font-size: 16px;
-        font-family: "poppins";
-    }
-
-    .nav-subtitle {
-        margin: 0;
-        font-size: 8px;
-        text-align: center;
-    }
-
-    .nav-links-list {
-        min-width: 6.5rem;
-        max-width: 8rem;
-        padding-left: 0;
-        margin-top: 2.1rem;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0.8rem;
-    }
-
-    .nav-item {
-        display: flex;
-        align-items: center;
-        padding-left: 0.3rem;
-        list-style: none; 
-        border: solid 1px black;
-        cursor: pointer;
-    }
-
-    .link-container {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-    }
-
-    .nav-icon {
-        height: 1.25rem;
-        padding-right: 0.25rem;
-    }
-
-    .nav-link {
-        font-size: 11px;
-        color: black;
-        text-decoration: none;
-    }
-
     /* main content styles */
 
     .add-transactions-content {
-        display: flex;
-        flex-direction: column;
-        gap: 0.7rem;
+        display: grid;
+        grid-template-rows: 0.75fr 0.75fr 10fr;
+        gap: 0.5rem;
         width: 85vw;
-        padding: 0.6rem 1.25rem 1.25rem 1.25rem;
-        background-color: blue;
+        padding: 1rem;
         overflow-y: auto;
     }
 
     /*hero section*/
 
     .add-transaction-hero {
-        width: 100%;
-        border-bottom: solid red 0.01rem;
+        padding-top: 0.85rem;
     }
 
     .add-transaction-hero-title {
-        font-size: 25px;
-        font-family: "poppins"; 
-        padding-top: 1.4rem;
-        padding-bottom: 1rem;
+        font-size: 30px;
+        font-family: "poppins";
     }
 
     /*header section*/
 
-    .add-transaction-header { 
-        padding-top: 0.3rem;
-        padding-bottom: 1rem;
-        border-bottom: solid red 0.01rem;
+    .add-transaction-header {
+        align-items: flex-end;
+        padding-top: 1.55rem;
     }
 
     .add-transaction-header-title {
         font-size: 15px;
-        padding-top: 0.55rem;
     }
 
     /*form section*/
 
     .add-transaction-form {
-        height: 20rem;
-        margin-top: 1rem;
+        min-height: 17rem;
         display: grid;
         grid-template-rows: repeat(1fr);
-        gap: 1rem;
+        gap: 0.5rem;
     }
 
-    .form-group {
+    .add-transaction-form-group {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
 
-    .form-label {
+    .add-transaction-form-label {
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -304,708 +200,338 @@
         font-size: 15px;
     }
 
-    .form-select {
-        width: 45vw;
-        border: 0;
-        border-radius: 0.25rem;
+    .add-transaction-form-select,
+    .add-transaction-form-input {
+        border-radius: 10px;
         padding-left: 1rem;
         font-size: 15px;
     }
 
-    .form-input {
-        width: 45vw;
-        border: 0;
-        border-radius: 0.25rem;
-        padding-left: 1rem;
-        font-size: 15px;
-    }
-
-    .form-actions {
-        margin-top: 1rem;
+    .add-transaction-form-actions {
         text-align: right;
     }
 
-    .btn {
+    .add-transaction-btn {
         height: 2rem;
         width: 5.25rem;
         margin: 0.25rem;
-        font-size: 13px;
+        font-size: 15px;
         border: 0;
-        border-radius: 0.15rem;
+        border-radius: 10px;
         cursor: pointer;
     }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-    .nav-menu {
-        width: 15vw;
-        padding: 1rem;
-        padding-top: 2.5rem;
-        border-right: solid 2px #ccc;
-        background-color: salmon;
-    }
-
-    .nav-brand {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .nav-logo {
-        width: 2rem;
-    }
-
-    .nav-brand-name {
-        width: 10rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        height: 3rem;
-        padding-left: 0.25rem;
-    }
-
-    .nav-title {
-        margin: 0;
-        text-align: center;
-        font-size: 20px;
-        font-family: "poppins";
-    }
-
-    .nav-subtitle {
-        margin: 0;
-        font-size: 10px;
-        text-align: center;
-    }
-
-    .nav-links-list {
-        width: 6.85rem;
-        padding-left: 0;
-        margin-top: 2.2rem;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0.8rem;
-    }
-
-    .nav-item {
-        display: flex;
-        align-items: center;
-        padding-left: 0.3rem;
-        list-style: none; 
-        border: solid 1px black;
-        cursor: pointer;
-    }
-
-    .link-container {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-    }
-
-    .nav-icon {
-        height: 1.2rem;
-        padding-right: 0.25rem;
-    }
-
-    .nav-link {
-        font-size: 11px;
-        color: black;
-        text-decoration: none;
-    }
-
-    /* main content styles */
+    /*hero section*/
 
     .add-transactions-content {
-        display: flex;
-        flex-direction: column;
-        gap: 0.7rem;
+        display: grid;
+        grid-template-rows: 0.75fr 0.75fr 10fr;
+        gap: 0.5rem;
         width: 85vw;
-        padding: 0.6rem 1.25rem 1.25rem 1.25rem;
-        background-color: blue;
+        padding: 1rem;
         overflow-y: auto;
     }
 
-    /*hero section*/
-
     .add-transaction-hero {
-        width: 100%;
-        padding-bottom: 1rem;
-        border-bottom: solid red 0.01rem;
+        padding-top: 1.8rem;
     }
 
     .add-transaction-hero-title {
-        font-size: 30px;
+        font-size: 35px;
         font-family: "poppins"; 
-        padding-top: 2.15rem; 
     }
 
     /*header section*/
 
-    .add-transaction-header { 
-        padding-top: 0.5rem;
-        padding-bottom: 1rem;
-        border-bottom: solid red 0.01rem;
+    .add-transaction-header {
+        padding-top: 1.5rem;
     }
 
     .add-transaction-header-title {
-        font-size: 16px;
-        margin-top: 0.3rem;
+        font-size: 18px;
     }
 
     /*form section*/
 
     .add-transaction-form {
         height: 20rem;
-        margin-top: 1rem;
         display: grid;
-        grid-template-rows: repeat(1fr);
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .add-transaction-form-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 1rem;
     }
 
-    .form-group {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .form-label {
+    .add-transaction-form-label {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        padding-right: 2rem;
-        font-size: 16px;
+        font-size: 18px;
     }
 
-    .form-select {
-        border: 0;
-        border-radius: 0.25rem;
-        padding-left: 1rem;
-        font-size: 16px;
+    .add-transaction-form-select,
+    .add-transaction-form-input {
+        min-width: 15rem;
+        padding-left: 0.5rem;
+        border-radius: 10px;
+        font-size: 18px;
     }
 
-    .form-input {
-        border: 0;
-        border-radius: 0.25rem;
-        padding-left: 1rem;
-        font-size: 16px;
-    }
-
-    .form-actions {
+    .add-transaction-form-actions {
         width: 54vw;
         margin-top: 1rem;
         text-align: right;
     }
 
-    .btn {
+    .add-transaction-btn {
         height: 2rem;
         width: 5.25rem;
         margin: 0.25rem;
-        font-size: 14px;
+        font-size: 15px;
         border: 0;
-        border-radius: 0.15rem;
+        border-radius: 10px;
         cursor: pointer;
     }
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1280px) {
-    .nav-menu {
-        width: 17vw;
-        padding: 2rem;
-        background-color: cyan;
-        border-right: solid 3px #ccc;
-    }
-
-    .nav-brand {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .nav-logo {
-        width: 3rem;
-    }
-
-    .nav-brand-name {
-        width: 20rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        height: 5rem;
-        padding-left: 0.25rem;
-    }
-
-    .nav-title {
-        margin: 0;
-        text-align: center;
-        font-size: 22px;
-        font-family: "poppins";
-    }
-
-    .nav-subtitle {
-        margin: 0;
-        font-size: 10px;
-        text-align: center;
-    }
-
-    .nav-links-list {
-        padding-left: 0;
-        margin-top: 2rem;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1rem; 
-    }
-
-    .nav-item {
-        display: flex;
-        align-items: center;
-        padding-left: 0.3rem;
-        list-style: none;
-        border: solid 1px black;
-        cursor: pointer;
-    }
-
-    .link-container {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-    }
-
-    .nav-icon {
-        height: 1.35rem;
-        padding-right: 0.25rem;
-    }
-
-    .nav-link {
-        font-size: 12px;
-        color: black;
-        text-decoration: none;
-    }
-
     /* main content styles */
 
     .add-transactions-content {
-        display: flex;
-        flex-direction: column;
-        gap: 0.7rem;
         width: 85vw;
-        padding: 0.6rem 1.25rem 1.25rem 1.25rem;
-        background-color: blue;
+        display: grid;
+        grid-template-rows: 0.75fr 0.75fr 10fr;
+        gap: 1rem;
+        padding: 1rem;
         overflow-y: auto;
     }
 
     /*hero section*/
 
     .add-transaction-hero {
-        width: 100%;
-        margin-bottom: 0.75rem;
-        border-bottom: solid red 0.01rem;
+        padding-top: 2rem;
     }
 
     .add-transaction-hero-title {
         font-size: 40px;
-        font-family: "poppins"; 
-        padding-top: 2.4rem;
-        padding-bottom: 1rem;
+        font-family: "poppins";
     }
 
     /*header section*/
 
-    .add-transaction-header { 
-        padding-top: 0.2rem;
-        border-bottom: solid red 0.01rem;
+    .add-transaction-header {
+        padding-top: 1.6rem;
     }
 
     .add-transaction-header-title {
         font-size: 20px;
-        margin-top: 0;
-        padding-bottom: 1rem;
     }
 
     /*form section*/
 
     .add-transaction-form {
-        height: 20rem;
-        margin-top: 1rem;
         display: grid;
-        grid-template-rows: repeat(1fr);
+        grid-template-rows: 0.65fr 0.65fr 0.65fr 0.65fr 0.65fr 0.65fr 0.65fr;
         gap: 1rem;
     }
 
-    .form-group {
+    .add-transaction-form-group {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
     }
 
-    .form-label {
+    .add-transaction-form-label {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        padding-right: 2rem;
-        font-size: 18px;
+        font-size: 20px;
     }
 
-    .form-select {
-        border: 0;
-        border-radius: 0.25rem;
+    .add-transaction-form-select,
+    .add-transaction-form-input {
+        border-radius: 10px;
         padding-left: 1rem;
-        font-size: 15px;
+        font-size: 20px;
     }
 
-    .form-input {
-        border: 0;
-        border-radius: 0.25rem;
-        padding-left: 1rem;
-        font-size: 15px;
-    }
-
-    .form-actions {
+    .add-transaction-form-actions {
         width: 53.2vw;
         margin-top: 1rem; 
         text-align: right;
     }
 
-    .btn {
+    .add-transaction-btn {
         height: 2.5rem;
         width: 7rem;
         margin: 0.25rem;
         font-size: 18px;
         border: 0;
-        border-radius: 0.15rem;
+        border-radius: 10px;
         cursor: pointer;
     }
 }
 
 @media screen and (min-width: 1281px) and (max-width: 1536px) {
-    .nav-menu {
-        width: 17vw;
-        padding: 2rem;
-        background-color: yellow;
-        border-right: solid 3px #ccc;
-    }
-
-    .nav-brand {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .nav-logo {
-        width: 3.25rem;
-    }
-
-    .nav-brand-name {
-        width: 20rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        height: 5rem;
-        padding-left: 0.25rem;
-    }
-
-    .nav-title {
-        margin: 0;
-        text-align: center;
-        font-family: "poppins";
-        font-size: 29px;
-    }
-
-    .nav-subtitle {
-        margin: 0;
-        text-align: center;
-        font-size: 12px;
-    }
-
-    .nav-links-list { 
-        padding-left: 0;
-        margin-top: 2.5rem;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .nav-item {
-        display: flex;
-        align-items: center;
-        padding-left: 0.3rem;
-        list-style: none;
-        border: solid 1px black;
-        cursor: pointer;
-    }
-
-    .link-container {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-    }
-
-    .nav-icon {
-        height: 1.5rem;
-        padding-right: 0.5rem;
-    }
-
-    .nav-link {
-        color: black;
-        text-decoration: none;
-    }
-
     /* main content styles */
 
     .add-transactions-content {
-        display: flex;
-        flex-direction: column;
-        gap: 0.7rem;
         width: 83vw;
-        padding: 0.6rem 1.25rem 1.25rem 1.25rem;
-        background-color: blue;
+        display: grid;
+        grid-template-rows: 1fr 1fr 10fr;
+        gap: 1rem;
+        padding: 1rem;
         overflow-y: auto;
     }
 
     /*hero section*/
 
     .add-transaction-hero {
-        width: 100%;
-        margin-bottom: 1rem;
-        border-bottom: solid red 0.01rem;
+        padding-top: 1.75rem;
     }
 
     .add-transaction-hero-title {
         font-size: 40px;
-        font-family: "poppins"; 
-        padding-top: 2.15rem; 
-        padding-bottom: 1rem;
+        font-family: "poppins";
     }
 
     /*header section*/
 
-    .add-transaction-header { 
-        padding-top: 0.3rem;
-        border-bottom: solid red 0.01rem;
+    .add-transaction-header {
+        padding-top: 2.3rem;
     }
 
     .add-transaction-header-title {
         font-size: 25px;
-        padding-top: 0.35rem;
-        padding-bottom: 1rem;
     }
 
     /*form section*/
 
     .add-transaction-form {
-        height: 20rem;
-        margin-top: 1rem;
         display: grid;
-        grid-template-rows: repeat(1fr);
+        grid-template-rows: 0.75fr 0.75fr 0.75fr 0.75fr 0.75fr 0.75fr 0.75fr;
         gap: 1rem;
     }
 
-    .form-group {
+    .add-transaction-form-group {
         display: grid;
         grid-template-columns: 2.25fr 2fr 3fr;
+        gap: 1rem;
     }
 
-    .form-label {
+    .add-transaction-form-label {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        padding-right: 2rem;
-        font-size: 15px;
+        font-size: 20px;
     }
 
-    .form-select {
-        border-radius: 0.25rem;
+    .add-transaction-form-select,
+    .add-transaction-form-input {
+        border-radius: 10px;
         padding-left: 1rem;
-        font-size: 15px;
+        font-size: 20px;
     }
 
-    .form-input {
-        border-radius: 0.25rem;
-        padding-left: 1rem;
-        font-size: 15px;
-    }
-
-    .form-actions {
+    .add-transaction-form-actions {
         width: 47.3vw;
         margin-top: 1rem;
         text-align: right;
     }
 
-    .btn {
-        height: 2rem;
+    .add-transaction-btn {
+        height: 2.5rem;
         width: 7rem;
         margin: 0.25rem;
         font-size: 15px;
         border: 0;
-        border-radius: 0.15rem;
+        border-radius: 10px;
         cursor: pointer;
     }
 }
 
 @media screen and (min-width: 1537px) {
-    .nav-menu {
-        width: 20vw;
-        padding: 2rem;
-        background-color: pink;
-        border-right: solid 3px #ccc;
-    }
-
-    .nav-brand {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 2rem;
-    }
-
-    .nav-logo {
-        width: 6rem;
-    }
-
-    .nav-brand-name {
-        width: 20rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        height: 5rem;
-        padding-left: 0.25rem;
-    }
-
-    .nav-title {
-        margin: 0;
-        text-align: center;
-        font-family: "poppins";
-        font-size: 50px;
-    }
-
-    .nav-subtitle {
-        margin: 0;
-        text-align: center;
-        font-size: 20px;
-    }
-
-    .nav-links-list { 
-        margin-top: 4.1rem;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .nav-item {
-        height: 4rem;
-        display: flex;
-        align-items: center;
-        padding-left: 0.3rem;
-        list-style: none;
-        border: solid 1px black;
-        cursor: pointer;
-    }
-
-    .link-container {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-    }
-
-    .nav-icon {
-        height: 3rem;
-        padding-right: 0.5rem;
-    }
-
-    .nav-link {
-        font-size: 20px;
-        color: black;
-        text-decoration: none;
-
-    }
-
     /* main content styles */
 
     .add-transactions-content {
-        display: flex;
-        flex-direction: column;
-        gap: 0.7rem;
+        display: grid;
+        grid-template-rows: 1fr 1fr 10fr;
+        gap: 2rem;
         width: 83vw;
-        padding: 0.6rem 1.25rem 1.25rem 1.25rem;
-        background-color: blue;
+        padding: 1rem;
         overflow-y: auto;
     }
 
     /*hero section*/
 
     .add-transaction-hero {
-        width: 100%;
-        margin-bottom: 1rem;
-        border-bottom: solid red 0.01rem;
+        padding-top: 3.5rem;
     }
 
     .add-transaction-hero-title {
         font-size: 55px;
-        font-family: "poppins"; 
-        padding-top: 3.9rem;
-        padding-bottom: 1rem;
+        font-family: "poppins";
     }
 
     /*header section*/
 
-    .add-transaction-header { 
-        padding-top: 0.3rem;
-        border-bottom: solid red 0.01rem;
+    .add-transaction-header {
+        padding-top: 3.2rem;
     }
 
     .add-transaction-header-title {
-        font-size: 25px;
-        padding-top: 2.5rem;
-        padding-bottom: 1rem;
+        font-size: 40px;
     }
 
     /*form section*/
 
     .add-transaction-form {
-        height: 24rem;
-        margin-top: 1rem;
+        min-height: 48rem;
         display: grid;
-        grid-template-rows: repeat(1fr);
-        gap: 1rem;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 4fr;
+        gap: 2rem;
     }
 
-    .form-group {
+    .add-transaction-form-group {
         display: grid;
         grid-template-columns: 2.25fr 2fr 3fr;
+        gap: 2rem;
     }
 
-    .form-label {
+    .add-transaction-form-label {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        padding-right: 2rem;
-        font-size: 25px;
+        font-size: 30px;
     }
 
-    .form-select {
-        border-radius: 0.25rem;
+    .add-transaction-form-select,
+    .add-transaction-form-input {
+        min-width: 25rem;
+        border-radius: 10px;
         padding-left: 1rem;
-        font-size: 25px;
+        font-size: 30px;
     }
 
-    .form-input {
-        border-radius: 0.25rem;
-        padding-left: 1rem;
-        font-size: 25px;
-    }
-
-    .form-actions {
+    .add-transaction-form-actions {
         width: 46.45vw;
         margin-top: 1rem;
         text-align: right;
     }
 
-    .btn {
-        height: 2.5rem;
-        width: 10rem;
+    .add-transaction-btn {
+        height: 4rem;
+        width: 11rem;
         margin: 0.25rem;
-        font-size: 22px;
+        font-size: 30px;
         border: 0;
-        border-radius: 0.15rem;
+        border-radius: 10px;
         cursor: pointer;
     }
 }
