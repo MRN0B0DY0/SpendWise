@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./index.css";
 import {    
     addtransactionicon,
@@ -8,16 +8,20 @@ import {
     reportsicon,
     transactionsicon,
     logo,
+    logouticon
 } from '../../assets'
-
 import { addTransaction } from "../../services/transactionApi";
 
-
 const Addtransactions = () => {
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        navigate("/");
+    };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
         const transactionData = {
             transaction_name: document.getElementById("name").value,
             amount: document.getElementById("amount").value,
@@ -26,12 +30,9 @@ const Addtransactions = () => {
             transaction_date: document.getElementById("transferDate").value,
             payment_method: document.getElementById("transferPaymentType").value
         };
-
         try {
             await addTransaction(transactionData);
-
             alert("Transaction Added Successfully");
-
                 document.getElementById("name").value = "";
                 document.getElementById("amount").value = "";
                 document.getElementById("expenseType").selectedIndex = 0;
@@ -41,7 +42,6 @@ const Addtransactions = () => {
         }
         catch(error){
             console.error("failed to add transaction:", error);
-
             alert("failed to add transaction");
         }
     };
@@ -58,10 +58,11 @@ const Addtransactions = () => {
                         <p className="nav-subtitle">Finance Tracker</p>
                     </div>
                 </div>
+
                 <div>
                     <ul className="nav-links-list">
                         <li className="nav-item">
-                            <Link to="/" className="link-container">
+                            <Link to="/homepage" className="link-container">
                                 <img src={dashboardicon} alt="Dashboard Icon" className="nav-icon" />
                                 <p className="nav-link">Dashboard</p>
                             </Link>
@@ -97,6 +98,15 @@ const Addtransactions = () => {
                             </Link>
                         </li>
                     </ul>
+                </div>
+
+                <div className='nav-logout-btn'>
+                    <div className='nav-item' onClick={handleLogout}>
+                        <div className='link-container'>
+                            <img src={logouticon} alt="Logout Icon" className='nav-icon' />
+                            <p className='nav-link'>Logout</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 

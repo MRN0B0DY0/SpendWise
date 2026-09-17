@@ -1,9 +1,8 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-:root{
- 
+:root {
     --primary: #2563eb;
     --primary-light: #dbeafe;
 
@@ -72,7 +71,7 @@
 
     .add-transactions-content {
         display: grid;
-        grid-template-rows: 0.75fr 0.9fr 8fr;
+        grid-template-rows: 1fr 0.75fr 8.25fr;
         gap: 0.5rem;
         width: 85vw;
         padding: 1rem;
@@ -93,7 +92,7 @@
     /*header section*/
 
     .add-transaction-header {
-        padding-top: 1.5rem;
+        padding-top: 0.5rem;
     }
 
     .add-transaction-header-title {
@@ -149,7 +148,7 @@
 
     .add-transactions-content {
         display: grid;
-        grid-template-rows: 0.75fr 0.75fr 10fr;
+        grid-template-rows: 1fr 0.5fr 8.5fr;
         gap: 0.5rem;
         width: 85vw;
         padding: 1rem;
@@ -159,7 +158,7 @@
     /*hero section*/
 
     .add-transaction-hero {
-        padding-top: 0.85rem;
+        padding-top: 1.8rem;
     }
 
     .add-transaction-hero-title {
@@ -170,8 +169,7 @@
     /*header section*/
 
     .add-transaction-header {
-        align-items: flex-end;
-        padding-top: 1.55rem;
+        padding-top: 0.75rem;
     }
 
     .add-transaction-header-title {
@@ -227,7 +225,7 @@
 
     .add-transactions-content {
         display: grid;
-        grid-template-rows: 0.75fr 0.75fr 10fr;
+        grid-template-rows: 0.75fr 0.75fr 8.5fr;
         gap: 0.5rem;
         width: 85vw;
         padding: 1rem;
@@ -306,7 +304,7 @@
     .add-transactions-content {
         width: 85vw;
         display: grid;
-        grid-template-rows: 0.75fr 0.75fr 10fr;
+        grid-template-rows: 0.75fr 0.75fr 8.5fr;
         gap: 1rem;
         padding: 1rem;
         overflow-y: auto;
@@ -384,7 +382,7 @@
     .add-transactions-content {
         width: 83vw;
         display: grid;
-        grid-template-rows: 1fr 1fr 10fr;
+        grid-template-rows: 1fr 1fr 8fr;
         gap: 1rem;
         padding: 1rem;
         overflow-y: auto;
@@ -404,7 +402,7 @@
     /*header section*/
 
     .add-transaction-header {
-        padding-top: 2.3rem;
+        padding-top: 1.75rem;
     }
 
     .add-transaction-header-title {
@@ -461,7 +459,7 @@
 
     .add-transactions-content {
         display: grid;
-        grid-template-rows: 1fr 1fr 10fr;
+        grid-template-rows: 1fr 0.5fr 8.5fr;
         gap: 2rem;
         width: 83vw;
         padding: 1rem;
@@ -472,6 +470,7 @@
 
     .add-transaction-hero {
         padding-top: 3.5rem;
+        margin-bottom: 0.7rem;
     }
 
     .add-transaction-hero-title {
@@ -482,7 +481,7 @@
     /*header section*/
 
     .add-transaction-header {
-        padding-top: 3.2rem;
+        padding-top: 1.5rem;
     }
 
     .add-transaction-header-title {

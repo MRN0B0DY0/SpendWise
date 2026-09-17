@@ -1,9 +1,8 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-:root{
- 
+:root {
     --primary: #2563eb;
     --primary-light: #dbeafe;
 
@@ -42,7 +41,7 @@
     border-right: 1px solid var(--border);
 }
 
-.nav-item{
+.nav-item {
     background-color: transparent;
     transition: all 0.3s ease;
 }
@@ -53,25 +52,25 @@
     color: var(--navbar-name);
 }
 
-.nav-item:hover{
+.nav-item:hover {
     background-color: var(--hover);
 }
 
-.dashboard{
+.dashboard {
     background-color: var(--bg-main);
 }
 
-.dashboard-title{
+.dashboard-title {
     color: var(--text-primary);
 }
 
-.dashboard-subtitle{
+.dashboard-subtitle {
     color: var(--text-secondary);
 }
 
 .dashboard-widget-card,
 .dashboard-summary-card,
-.dashboard-detail-card{
+.dashboard-detail-card {
     background-color: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 10px;
@@ -81,32 +80,32 @@
 
 .dashboard-summary-value,
 .dashboard-widget-text,
-.dashboard-detail-text{
+.dashboard-detail-text {
     color: var(--text-secondary);
 }
 
 /*payment methods analysis */
 
-.payment-chart{
+.payment-chart {
     display:flex;
     flex-direction:column;
     gap: 5px;
 }
 
-.payment-bar-item{
+.payment-bar-item {
     display:flex;
     flex-direction:column;
     gap: 5px;
 }
 
-.payment-bar-header{
+.payment-bar-header {
     display:flex;
     justify-content:space-between;
     align-items:center;
     color: var(--text-secondary);
 }
 
-.payment-bar-background{
+.payment-bar-background {
     width:100%;
     height:14px;
     background:#e2e8f0;
@@ -114,7 +113,7 @@
     overflow:hidden;
 }
 
-.payment-bar-fill{
+.payment-bar-fill {
     height:100%;
     border-radius:20px;
     background:linear-gradient(
@@ -127,65 +126,64 @@
 
 /*spending over time  */ 
 
-.monthly-chart{
+.monthly-chart {
     height: 220px;
     display:flex;
     justify-content:space-evenly;
     align-items:flex-end;
 }
 
-.monthly-bar-container{
+.monthly-bar-container {
     display:flex;
     flex-direction:column;
     align-items:center;
     width:60px;
-
 }
 
-.monthly-bar{
+.monthly-bar {
     width:35px;
     background:#2563eb;
     border-radius:10px 10px 0 0;
     transition:0.4s;
 }
 
-.monthly-bar:hover{
+.monthly-bar:hover {
     background:#1d4ed8;
     transform:scaleY(1.05);
 }
 
-.monthly-name{
+.monthly-name {
     margin-top:12px;
     font-weight:600;
 }
 
-.monthly-value{
+.monthly-value {
     font-size:12px;
     color:#64748B;
 }
 
 /* spending breakdown */
 
-.category-breakdown{
+.category-breakdown {
     display:flex;
     flex-direction:column;
     gap: 5px;
 }
 
-.category-item{
+.category-item {
     display:flex;
     flex-direction:column;
     gap: 5px;
 }
 
-.category-header{
+.category-header {
     display:flex;
     justify-content:space-between;
     align-items:center;
     color: var(--text-secondary);
 }
 
-.category-bar-background{
+.category-bar-background {
     width:100%;
     height:14px;
     background:#e5e7eb;
@@ -193,7 +191,7 @@
     overflow:hidden;
 }
 
-.category-bar-fill{
+.category-bar-fill {
     height:100%;    
     background:linear-gradient(
         90deg,
@@ -207,10 +205,10 @@
 @media  screen and (max-width:640px) {
     .nav-menu {
         width: 18vw;
-        padding: 1rem;
+        padding: 0.5rem;
         padding-top: 2.5rem;
-        background-color: var(--bg-sidebar);
-        border-right: 1px solid var(--border);
+        display: grid;
+        grid-template-rows: 0.25fr 4.5fr 0.25fr;
     }
 
     .nav-brand {
@@ -228,7 +226,7 @@
     }
 
     .nav-links-list {
-        margin-top: 1.5rem;
+        margin-top: 1.75rem;
         display: grid;
         grid-template-columns: 1fr;
         justify-items: center;
@@ -262,13 +260,19 @@
         text-decoration: none;
     }
 
+    .nav-logout-btn {
+        width: 100%;
+        display: grid;
+        justify-content: center;
+    }
+
     /*home page design*/
 
     .dashboard {
         width: 82vw;
         padding: 1rem;
         display: grid;
-        grid-template-rows: 0.75fr 1fr 1fr 2fr;
+        grid-template-rows: 0.5fr 1fr 1fr 2.5fr;
         gap: 0.5rem;
         overflow-y: auto;
     }
@@ -359,8 +363,10 @@
 @media screen and (min-width:641px) and (max-width:768px) {
     .nav-menu {
         width: 20vw;
-        padding: 1rem;
+        padding: 0.5rem;
         padding-top: 2.5rem;
+        display: grid;
+        grid-template-rows: 0.25fr 4.5fr 0.25fr;
     }
 
     .nav-brand {
@@ -374,7 +380,9 @@
     }
 
     .nav-brand-name {
-        width: 10rem;
+        width: auto;
+        flex: 1;
+        min-width: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -397,26 +405,23 @@
     }
 
     .nav-links-list {
-        min-width: 6.5rem;
-        max-width: 8rem;
-        padding-left: 0;
         margin-top: 2rem;
         display: grid;
         grid-template-columns: 1fr;
         gap: 0.8rem;
+        justify-content: center;
     }
 
     .nav-item {
+        width: 100%;
         display: flex;
         align-items: center;
         padding-left: 0.3rem;
-        list-style: none; 
         border: solid 1px white;
         cursor: pointer;
     }
 
     .link-container {
-        width: 100%;
         display: flex;
         align-items: center;
         text-decoration: none;
@@ -428,8 +433,12 @@
     }
 
     .nav-link {
-        font-size: 11px;
+        font-size: 10px;
         text-decoration: none;
+    }
+
+    .nav-logout-btn {
+        width: 100%;
     }
 
     /*home page */
@@ -438,13 +447,12 @@
         width: 80vw;
         padding: 1rem;
         display: grid;
-        grid-template-rows: 0.5fr 0.5fr 2fr 2fr 1fr;
+        grid-template-rows: 0.6fr 0.4fr 2fr 2fr;
         gap: 0.5rem;
     }
 
     .dashboard-hero {
-        padding-top: 0.85rem;
-        margin-bottom: 0.85rem;
+        padding-top: 1.75rem;
     }
 
     .dashboard-title {
@@ -539,8 +547,10 @@
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .nav-menu {
         width: 15vw;
-        padding: 1rem;
+        padding: 0.5rem;
         padding-top: 2.5rem;
+        display: grid;
+        grid-template-rows: 0.25fr 4.5fr 0.25fr;
     }
 
     .nav-brand {
@@ -550,11 +560,13 @@
     }
 
     .nav-logo {
-        width: 2rem;
+        width: 1.75rem;
     }
 
     .nav-brand-name {
-        width: 10rem;
+        width: auto;
+        flex: 1;
+        min-width: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -566,18 +578,17 @@
     .nav-title {
         margin: 0;
         text-align: center;
-        font-size: 20px;
+        font-size: 16px;
         font-family: "poppins";
     }
 
     .nav-subtitle {
         margin: 0;
-        font-size: 10px;
+        font-size: 9px;
         text-align: center;
     }
 
     .nav-links-list {
-        width: 8rem;
         padding-left: 0;
         margin-top: 2rem;
         display: grid;
@@ -588,7 +599,7 @@
     .nav-item {
         display: flex;
         align-items: center;
-        padding-left: 0.3rem;
+        padding-left: 0.15rem;
         list-style: none; 
         border: solid 1px white;
         cursor: pointer;
@@ -602,21 +613,26 @@
     }
 
     .nav-icon {
-        height: 1.5rem;
-        padding-right: 0.25rem;
+        height: 1.25rem;
+        padding-right: 0.15rem;
     }
 
     .nav-link {
-        font-size: 11px;
+        font-size: 10px;
         text-decoration: none;
+    }
+
+    .nav-logout-btn {
+        width: 100%;
     }
 
     /*home section*/
 
     .dashboard {
         width: 85vw;
+        min-width: 0;
         display: grid;
-        grid-template-rows: 0.75fr 0.85fr 2fr 2fr 0.1fr;
+        grid-template-rows: 0.5fr 0.65fr 1.85fr 2fr;
         gap: 0.5rem;
         padding: 1rem;
     }
@@ -719,7 +735,10 @@
 @media screen and (min-width: 1025px) and (max-width: 1280px) {
     .nav-menu {
         width: 17vw;
-        padding: 2rem;
+        padding: 1rem;
+        padding-top: 2rem;
+        display: grid;
+        grid-template-rows: 0.25fr 4.55fr 0.2fr;
     }
 
     .nav-brand {
@@ -733,7 +752,9 @@
     }
 
     .nav-brand-name {
-        width: 20rem;
+        width: auto;
+        flex: 1;
+        min-width: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -757,7 +778,7 @@
 
     .nav-links-list {
         padding-left: 0;
-        margin-top: 2rem;
+        margin-top: 1.8rem;
         display: grid;
         grid-template-columns: 1fr;
         gap: 1rem; 
@@ -789,13 +810,17 @@
         text-decoration: none;
     }
 
+    .nav-logout-btn {
+        width: 100%;
+    }
+
     /*home section*/
 
     .dashboard {
         width: 83vw;
         padding: 1rem;
         display: grid;
-        grid-template-rows: 0.9fr 1fr 1fr 1fr;
+        grid-template-rows: 0.5fr 0.75fr 1.75fr 2fr;
         gap: 0.5rem;
         overflow-y: auto;
     }
@@ -899,6 +924,8 @@
     .nav-menu {
         width: 17vw;
         padding: 2rem;
+        display: grid;
+        grid-template-rows: 0.25fr 4.65fr 0.15fr;
     }
 
     .nav-brand {
@@ -912,7 +939,9 @@
     }
 
     .nav-brand-name {
-        width: 20rem;
+        width: auto;
+        flex: 1;
+        min-width: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -967,11 +996,15 @@
         text-decoration: none;
     }
 
+    .nav-logout-btn {
+        width: 100%;
+    }
+
     /*home section*/
 
     .dashboard {
         display: grid;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.8fr 0.7fr 1.5fr 2fr;
         gap: 0.5rem;
         width: 83vw;
         padding: 1rem;
@@ -979,8 +1012,7 @@
     }
 
     .dashboard-hero {
-        margin-top: 1.75rem;
-        margin-bottom: 2rem;
+        padding-top: 1.75rem;
     }
 
     .dashboard-title {
@@ -1078,6 +1110,9 @@
     .nav-menu {
         width: 20vw;
         padding: 2rem;
+        padding-top: 2.25rem;
+        display: grid;
+        grid-template-rows: 0.25fr 4.5fr 0.25fr;
     }
 
     .nav-brand {
@@ -1088,11 +1123,13 @@
     }
 
     .nav-logo {
-        width: 6rem;
+        width: 4.5rem;
     }
 
     .nav-brand-name {
-        width: 20rem;
+        width: auto;
+        flex: 1;
+        min-width: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1105,17 +1142,17 @@
         margin: 0;
         text-align: center;
         font-family: "poppins";
-        font-size: 50px;
+        font-size: 40px;
     }
 
     .nav-subtitle {
         margin: 0;
         text-align: center;
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .nav-links-list { 
-        margin-top: 3rem;
+        margin-top: 4.2rem;
         display: grid;
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -1147,12 +1184,15 @@
     .nav-link {
         font-size: 20px;
         text-decoration: none;
+    }
 
+    .nav-logout-btn {
+        width: 100%;
     }
 
     .dashboard {
         display: grid;
-        grid-template-rows: 0.75fr 0.75fr 2fr 2fr;
+        grid-template-rows: 0.7fr 0.7fr 1.6fr 2fr;
         gap: 1rem;
         width: 80vw;
         padding: 1.5rem;
@@ -1160,8 +1200,8 @@
     }
 
     .dashboard-hero {
-        margin-top: 3rem;
-        margin-bottom: 2.75rem;
+        padding-top: 3rem;
+        margin-bottom: 2rem;
     }
 
     .dashboard-title {
@@ -1262,5 +1302,4 @@
         width: 50px;
     }
 }
-
 

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getTransactions, deleteTransaction } from "../../services/transactionApi";
 import "./index.css";
@@ -18,43 +18,48 @@ import {
     entertainmenticon,
     salaryicon,
     deleteicon,
+    logouticon
 } from '../../assets'
 
 const Transactions = () => {
     const [transactions, setTransactions] = useState([]);
     const [searchInput, setSearchInput] = useState("");
     const [filterBy, setFilterBy] = useState("transaction_name");
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        navigate("/");
+    };
 
     useEffect(() => {
         const fetchTransactions = async () => {
             try {
-
                 const data = await getTransactions();
-
                 setTransactions(data);
-
             } catch (error) {
-
                 console.log(error);
-
             }
-
         };
-
         fetchTransactions();
-
     }, []);
 
     const handleDelete = async id => {
+        const confirmDelete = window.confirm(
+            "Are you sure you want to delete this transaction?"
+        );
+
+        if (!confirmDelete) {
+            return;
+        }
+
         try {
             await deleteTransaction(id);
-
             setTransactions(
                 transactions.filter(
                     transaction => transaction.id !== id
                 )
             );
-
             alert("Transaction Deleted");
         }
         catch(error){
@@ -63,7 +68,6 @@ const Transactions = () => {
     };
 
     const totalTransactions = transactions.length;
-
     const incomeRecords = transactions.filter(
             transaction => transaction.type === "Income"
         ).length;
@@ -73,9 +77,7 @@ const Transactions = () => {
         ).length;
 
     const totalAmount = transactions.reduce((sum, transaction) => {
-
         const amount = Number(transaction.amount);
-
         return transaction.type === "Expense"
             ? sum + amount : sum ;
     }, 0);
@@ -114,10 +116,11 @@ const Transactions = () => {
                         <p className="nav-subtitle">Finance Tracker</p>
                     </div>
                 </div>
+
                 <div>
                     <ul className="nav-links-list">
                         <li className="nav-item">
-                            <Link to="/" className="link-container">
+                            <Link to="/homepage" className="link-container">
                                 <img src={dashboardicon} alt="Dashboard Icon" className="nav-icon" />
                                 <p className="nav-link">Dashboard</p>
                             </Link>
@@ -154,10 +157,18 @@ const Transactions = () => {
                         </li>
                     </ul>
                 </div>
+
+                <div className='nav-logout-btn'>
+                    <div className='nav-item' onClick={handleLogout}>
+                        <div className='link-container'>
+                            <img src={logouticon} alt="Logout Icon" className='nav-icon' />
+                            <p className='nav-link'>Logout</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div className="transactions-content">
-
                 {/* Hero banner Section */}
                 <div className="transactions-hero">
                     <h1 className="transactions-title">Transactions</h1>
@@ -297,5 +308,3 @@ const Transactions = () => {
 }
 
 export default Transactions;
-
-//<p className="filter-options-text">Filter Options</p>

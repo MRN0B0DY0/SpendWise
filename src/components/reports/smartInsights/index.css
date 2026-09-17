@@ -1,0 +1,82 @@
+.report-smart-insights {
+    box-sizing: border-box;
+}
+
+.smart-insight-item {
+    display: flex;
+    align-items: center;
+}
+
+
+.smart-insight-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+.smart-insight-item p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #4b5563;
+}
+
+.smart-insight-item strong {
+    color: #111827;
+}
+.smart-insights-message {
+    margin: 0;
+    padding: 30px 10px;
+    text-align: center;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 640px) {
+    .smart-insight-item {
+        display: flex;
+        align-items: center;
+    }
+
+    .report-smart-insights h3 {
+        font-size: 17px;
+    }
+
+    .smart-insight-item {
+        gap: 10px;
+    }
+
+    .smart-insight-item p {
+        font-size: 13px;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1536px) {
+    .smart-insight-item p {
+        font-size: 17px;
+    }
+}
+
+@media screen and (min-width: 1536px) {
+    .smart-insight-item {
+        height: 60px;
+        display: flex;
+        text-align: center;
+    }
+
+    .smart-insight-item p {
+        font-size: 30px;
+    }
+
+    .smart-insight-icon {
+        height: 100%;
+        width: 40px;
+        margin-right: 1rem;
+        font-size: 30px;
+    }
+}

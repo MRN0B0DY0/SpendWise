@@ -1,14 +1,766 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-.report {
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    display: flex; 
-    font-family: "inter";
-    cursor: default;
+:root {
+    --primary: #2563eb;
+    --primary-light: #dbeafe;
+
+    --success: #16a34a;
+    --success-light: #dcfce7;
+ 
+    --danger: #dc2626;
+    --danger-light: #fee2e2;
+ 
+    --bg-main: #F8FAFC;
+    --bg-card: #EFF6FF;
+    --bg-sidebar: #111827;
+
+    --navbar-name: #ffffff;    
+    --text-primary: #0F172A;
+    --text-secondary: #64748B;
+
+    --border: #E2E8F0;
+ 
+    --hover: #4F46E5;
 }
 
+.report { 
+    height: 100vh; 
+    width: 100vw; 
+    margin: 0; 
+    padding: 0; 
+    display: flex; 
+    font-family: "inter"; 
+    cursor: default; 
+    background: var(--bg-main);
+}
+
+.report-content {
+    overflow-y: auto;
+}
+
+.report-summary-card,
+.report-chart-card,
+.report-category-card,
+.report-performance-card,
+.report-transactions,
+.report-insights {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    color: var(--text-primary);
+}
+
+.report-filter-card-item {
+    color: #ffffff;
+    cursor: pointer;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: var(--bg-sidebar);
+}
+
+@media screen and (max-width: 391px) {
+    .report-content {
+        width: 82vw;
+        padding: 0.5rem;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 0.5rem;
+        overflow-y: auto;
+    }
+
+    .report-hero {
+        height: 100px;
+        width: 95%;
+        padding-top: 2rem;
+    }
+
+    .report-title {
+        font-size:25px;
+        font-family: "poppins";
+    }
+
+    .report-subtitle {
+        font-size: 13px;
+    }
+
+    .report-filter-card {
+        height: 30px;
+        width: 95%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .report-filter-card-item {
+        padding-left: 0.5rem;
+    }
+
+    .report-filter-card select {
+        font-size: 13px;
+    }
+
+    .report-summary {
+        height: 150px;
+        width: 95%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .report-summary-card {
+        padding: 0.5rem;
+    }
+
+    .report-summary-card h3{
+        font-size: 15px;
+    }
+
+    .report-summary-card h2{
+        font-size: 20px;
+    }
+
+    .report-chart-row {
+        width: 95%;
+        display: grid;
+        grid-template-rows: auto auto;
+        gap: 0.5rem;
+    }
+
+    .report-chart-card,
+    .report-category-card,
+    .report-performance-card,
+    .report-transactions,
+    .report-insights {
+        padding: 0.5rem;
+    }
+
+    .report-chart-card h3,
+    .report-category-card h3,
+    .report-performance-card h3,
+    .report-transactions h3,
+    .report-insights h3 {
+        font-size: 20px;
+    }
+
+    .report-chart-card p,
+    .report-category-card p,
+    .report-performance-card p,
+    .report-transactions p,
+    .report-insights p {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 14px;
+    }
+
+    .report-transactions {
+        width: 290px;
+    }
+
+    .report-transactions th {
+        font-size:12px;
+    }
+
+    .report-transactions td {
+        font-size:11px;
+    }
+
+    .report-insights {
+        width: 95%;
+        padding: 0.5rem;
+    }
+
+    .report-insights li {
+        font-size:12px;
+    } 
+}
+
+@media screen and (min-width: 392px) and (max-width: 640px) {
+    .report-content {
+        width: 82vw;
+        padding: 1rem;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 0.5rem;
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
+
+    .report-hero {
+        height: 90px;
+        padding-top: 1.5rem;
+    }
+
+    .report-title {
+        font-size:25px;
+        font-family: "poppins";
+    }
+
+    .report-subtitle {
+        font-size: 13px;
+    }
+
+    .report-filter-card {
+        height: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .report-filter-card-item {
+        padding-left: 0.5rem;
+    }
+
+    .report-filter-card select {
+        font-size: 13px;
+    }
+
+    .report-summary {
+        height: 150px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .report-summary-card {
+        padding: 0.5rem;
+    }
+
+    .report-summary-card h3 {
+        font-size: 15px;
+    }
+
+    .report-summary-card h2 {
+        font-size: 20px;
+    }
+
+    .report-chart-row {
+        display: grid;
+        grid-template-rows: auto auto;
+        gap: 0.5rem;
+    }
+
+    .report-chart-card,
+    .report-category-card,
+    .report-performance-card,
+    .report-transactions,
+    .report-insights {
+        padding: 0.5rem;
+    }
+
+    .report-chart-card h3,
+    .report-category-card h3,
+    .report-performance-card h3,
+    .report-transactions h3,
+    .report-insights h3 {
+        font-size: 20px;
+    }
+
+    .report-chart-card p,
+    .report-category-card p,
+    .report-performance-card p,
+    .report-transactions p,
+    .report-insights p {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 14px;
+    }
+
+    .report-transactions {
+        min-width: 315px;
+    }
+
+    .report-transactions th {
+        font-size:12px;
+    }
+
+    .report-transactions td {
+        font-size:11px;
+    }
+
+    .report-insights {
+        padding: 0.5rem;
+    }   
+}
+
+@media  screen and (min-width: 641px) and (max-width: 768px) {
+    .report-content {
+        width: 80vw;
+        padding: 1rem;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 0.5rem;
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
+
+    .report-hero {
+        height: 95px;
+        padding-top: 2rem;
+    }
+
+    .report-title {
+        font-size: 30px;
+        font-family: "poppins";
+    }
+
+    .report-subtitle {
+        font-size: 15px;
+    }
+
+    .report-filter-card {
+        height: 35px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .report-filter-card-item {
+        height: 100%;
+        padding-left: 0.5rem;
+    }
+
+    .report-summary {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .report-summary-card {
+        padding: 0.5rem;
+    }
+
+    .report-summary-card h3 {
+        padding-bottom: 0.5rem;
+        font-size: 18px;
+    }
+
+    .report-summary-card h2 {
+        font-size: 25px;
+    }
+
+    .report-chart-row {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .report-chart-card,
+    .report-category-card,
+    .report-performance-card,
+    .report-transactions,
+    .report-insights {
+        padding: 0.5rem;
+    }
+
+    .report-chart-card h3,
+    .report-category-card h3,
+    .report-performance-card h3,
+    .report-transactions h3,
+    .report-insights h3 {
+        font-size: 20px;
+    }
+
+    .report-chart-card p,
+    .report-category-card p,
+    .report-performance-card p,
+    .report-transactions p,
+    .report-insights p {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        font-size: 15px;
+    }
+
+    .report-chart-row-large {
+        grid-template-rows: 2fr 1fr;
+    }
+
+    .report-transactions {
+        min-width: 315px;
+    }
+
+    .report-transactions th {
+        font-size:13px;
+    }
+
+    .report-transactions td {
+        font-size:12px;
+    }  
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .report-content {
+        width: 85vw;
+        padding: 1rem;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+        overflow-y: auto;
+    }
+
+    .report-hero {
+        height: 85px;
+        padding-top: 1.65rem;
+    }
+
+    .report-title {
+        font-size: 35px;
+        font-family: "poppins";
+    }
+
+    .report-subtitle {
+        font-size: 18px;
+    }
+
+    .report-filter-card {
+        height: 35px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .report-filter-card-item {
+        height: 100%;
+        padding-left: 1rem;
+        font-size: 16px;
+    }
+
+    .report-summary {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .report-summary-card {
+        padding: 1rem;
+    }
+
+    .report-summary-card h3 {
+        font-size:15px;
+    }
+
+    .report-summary-card h2 {
+        font-size:24px;
+    }
+
+    .report-chart-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .report-chart-card,
+    .report-category-card,
+    .report-performance-card,
+    .report-transactions,
+    .report-insights {
+        padding: 1rem;
+    }
+
+    .report-chart-card h3,
+    .report-category-card h3,
+    .report-performance-card h3,
+    .report-transactions h3,
+    .report-insights h3 {
+        font-size: 22px;
+    }
+
+    .report-chart-card p,
+    .report-category-card p,
+    .report-performance-card p,
+    .report-transactions p,
+    .report-insights p {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        font-size: 16px;
+    }
+
+    .report-transactions th {
+        font-size: 14px;
+    }
+
+    .report-transactions td {
+        font-size: 13px;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    .report-content {
+        width: 83vw;
+        padding: 1rem;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+        overflow-y: auto;
+    }
+
+    .report-hero {
+        height: 110px;
+        padding-top: 2rem;
+    }
+
+    .report-title {
+        font-size: 40px;
+        font-family: "poppins";
+    }
+
+    .report-subtitle {
+        font-size: 20px;
+    }
+
+    .report-filter-card {
+        height: 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .report-filter-card-item {
+        height: 100%;
+        padding-left: 1rem;
+        font-size: 19px;
+    }
+
+    .report-filter-card-item option {
+        font-size: 17px;
+    }
+
+    .report-summary {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .report-summary-card {
+        padding: 1rem;
+    }
+
+    .report-summary-card h3 {
+        font-size: 19px;
+    }
+
+    .report-summary-card h2 {
+        font-size:29px;
+    }
+
+    .report-chart-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .report-chart-card,
+    .report-category-card,
+    .report-performance-card,
+    .report-transactions,
+    .report-insights {
+        padding: 1rem;
+    }
+
+    .report-chart-card h3,
+    .report-category-card h3,
+    .report-performance-card h3,
+    .report-transactions h3,
+    .report-insights h3 {
+        font-size: 25px;
+    }
+
+    .report-chart-card p,
+    .report-category-card p,
+    .report-performance-card p,
+    .report-transactions p,
+    .report-insights p {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        font-size: 19px;
+    }
+
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1536px) {
+    .report-content {
+        width: 83vw;
+        padding: 1rem;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+        overflow-y: auto;
+    }
+
+    .report-hero {
+        height: 110px;
+        padding-top: 2rem;
+    }
+
+    .report-title {
+        font-size: 40px;
+        font-family: "poppins";
+    }
+
+    .report-subtitle {
+        font-size: 20px;
+    }
+
+    .report-filter-card {
+        height: 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .report-filter-card-item {
+        height: 100%;
+        padding-left: 1rem;
+        font-size: 19px;
+    }
+
+    .report-filter-card-item option {
+        font-size: 17px;
+    }
+
+    .report-summary {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .report-summary-card {
+        padding: 1rem;
+    }
+
+    .report-summary-card h3 {
+        font-size: 19px;
+    }
+
+    .report-summary-card h2 {
+        font-size:29px;
+    }
+
+    .report-chart-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .report-chart-card,
+    .report-category-card,
+    .report-performance-card,
+    .report-transactions,
+    .report-insights {
+        padding: 1rem;
+    }
+
+    .report-chart-card h3,
+    .report-category-card h3,
+    .report-performance-card h3,
+    .report-transactions h3,
+    .report-insights h3 {
+        font-size: 25px;
+    }
+
+    .report-chart-card p,
+    .report-category-card p,
+    .report-performance-card p,
+    .report-transactions p,
+    .report-insights p {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        font-size: 19px;
+    }
+
+}
+
+@media screen and (min-width: 1537px) {
+    .report-content {
+        width: 80vw;
+        padding: 2rem;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 2rem;
+        overflow-y: auto;
+    }
+
+    .report-hero {
+        height: 148px;
+        padding-top: 2.5rem;
+    }
+
+    .report-title {
+        font-size: 55px;
+        font-family: "poppins";
+    }
+
+    .report-subtitle {
+        font-size: 25px;
+    }
+
+    .report-filter-card {
+        height: 60px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .report-filter-card-item {
+        height: 100%;
+        padding-left: 2rem;
+        font-size: 28px;
+    }
+
+    .report-filter-card-item option {
+        font-size: 28px;
+    }
+
+    .report-summary {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .report-summary-card {
+        padding: 1.5rem;
+    }
+
+    .report-summary-card h3 {
+        font-size: 28px;
+    }
+
+    .report-summary-card h2 {
+        font-size: 40px;
+    }
+
+    .report-chart-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .report-chart-card,
+    .report-category-card,
+    .report-performance-card,
+    .report-transactions,
+    .report-insights {
+        padding: 1.5rem;
+    }
+
+    .report-chart-card h3,
+    .report-category-card h3,
+    .report-performance-card h3,
+    .report-transactions h3,
+    .report-insights h3 {
+        font-size: 40px;
+    }
+
+    .report-chart-card p,
+    .report-category-card p,
+    .report-performance-card p,
+    .report-transactions p,
+    .report-insights p {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        font-size: 28px;
+    }
+}

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getBudgets, updateBudget, createBudget } from "../../services/transactionApi";
 import "./index.css";
@@ -11,13 +11,19 @@ import {
     transactionsicon,
     logo,
     rupeeicon,
+    logouticon
 } from '../../assets'
          
 const Budgetplanner = () => {
-
     const [budgets, setBudgets] = useState([]);
     const [selectedMonth, setSelectedMonth] = useState(6);
     const [selectedYear, setSelectedYear] = useState(2026);
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        navigate("/");
+    };
 
     useEffect(() => {
         const fetchBudgets = async () => {
@@ -27,7 +33,6 @@ const Budgetplanner = () => {
                     selectedYear
                 );
                 setBudgets(data);
-
             } catch (error) {
                 console.log(error);
             }
@@ -66,16 +71,13 @@ const Budgetplanner = () => {
                     );
                 })
             );
-
             const updatedBudgets =
                 await getBudgets(
                     selectedMonth,
                     selectedYear
                 );
             setBudgets(updatedBudgets);
-
             alert("Budget Updated Successfully");
-
         } catch (error) {
             console.log(error);
         }
@@ -93,10 +95,11 @@ const Budgetplanner = () => {
                         <p className="nav-subtitle">Finance Tracker</p>
                     </div>
                 </div>
+
                 <div>
                     <ul className="nav-links-list">
                         <li className="nav-item">
-                            <Link to="/" className="link-container">
+                            <Link to="/homepage" className="link-container">
                                 <img src={dashboardicon} alt="Dashboard Icon" className="nav-icon" />
                                 <p className="nav-link">Dashboard</p>
                             </Link>
@@ -104,7 +107,7 @@ const Budgetplanner = () => {
                         <li className="nav-item">
                             <Link to="/transactions" className="link-container">
                                 <img src={transactionsicon} alt="Transactions Icon" className="nav-icon" />
-                                <a href="/transactions" className="nav-link">Transactions</a>
+                                <p className="nav-link">Transactions</p>
                             </Link>
                         </li>
                         <li className="nav-item">
@@ -116,27 +119,35 @@ const Budgetplanner = () => {
                         <li className="nav-item">
                             <Link to="/budget-planner" className="link-container">
                                 <img src={budgetplannericon} alt="Budget Planner Icon" className="nav-icon" />
-                                <a href="/budget-planner" className="nav-link">Budget Planner</a>
+                                <p className="nav-link">Budget Planner</p>
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link to="/reports" className="link-container">
                                 <img src={reportsicon} alt="Reports Icon" className="nav-icon" />
-                                <a href="/reports" className="nav-link">Reports</a>
+                                <p className="nav-link">Reports</p>
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link to="/profile" className="link-container">
                                 <img src={profileicon} alt="Profile Icon" className="nav-icon" />
-                                <a href="/profile" className="nav-link">Profile</a>
+                                <p className="nav-link">Profile</p>
                             </Link>
                         </li>
                     </ul>
                 </div>
+
+                <div className='nav-logout-btn'>
+                    <div className='nav-item' onClick={handleLogout}>
+                        <div className='link-container'>
+                            <img src={logouticon} alt="Logout Icon" className='nav-icon' />
+                            <p className='nav-link'>Logout</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <div className="budget-planner-content">
-
                 <div className="budget-planner-hero">
                     <h1 className="budget-planner-hero-title">Set Budget</h1>
                 </div>
@@ -246,7 +257,6 @@ const Budgetplanner = () => {
                 <div className="budget-planner-save-btn-container">
                     <button className="budget-planner-save-btn" type="button" onClick={handleSave}>Update Budget</button>
                 </div>
-
             </div>
         </div>
     )

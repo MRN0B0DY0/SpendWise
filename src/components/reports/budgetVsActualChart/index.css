@@ -1,0 +1,185 @@
+.budget-vs-actual {
+    box-sizing: border-box;
+}
+
+.budget-vs-actual-header {
+    margin-bottom: 0.5rem;
+}
+
+.budget-vs-actual-header select {
+    height: 30px;
+    padding-left: 0.5rem;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: #111827;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+}
+
+.budget-vs-actual-header select:focus {
+    border-color: #6366f1;
+}
+
+.budget-vs-actual-chart {
+    height: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.budget-vs-actual-chart p {
+    font-size: 15px;
+}
+
+.budget-vs-actual-message {
+    color: #64748B;
+    text-align: center;
+}
+
+/* new code */
+
+@media screen and (max-width: 380px) {
+    .budget-vs-actual {
+        height: 200px;
+        width: 220px;
+    }
+
+    .budget-vs-actual-header select {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .budget-vs-actual {
+        height: 220px;
+        width: 99%;
+    }
+
+    .budget-vs-actual-header h3 {
+        font-size: 17px;
+    }
+
+    .budget-vs-actual-header select {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 641px) and (max-width: 768px) {
+    .budget-vs-actual {
+        height: 83%;
+    }    
+
+    .budget-vs-actual-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .budget-vs-actual-header select {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media  screen and (min-width: 769px) and (max-width: 1024px) {
+    .budget-vs-actual {
+        height: 70%;
+        min-height: 50%;
+    }
+
+    .budget-vs-actual-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .budget-vs-actual-header h3 {
+        font-size: 18px;
+    }
+
+    .budget-vs-actual-header select {
+        height: 30px;
+        width: 100%;
+        margin-bottom: 0.5rem;
+        padding-left: 1rem;
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    .budget-vs-actual {
+        height: 70%;
+        min-height: 50%;
+    }
+
+    .budget-vs-actual-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .budget-vs-actual-header select {
+        height: 35px;
+        width: 100%;
+        margin-bottom: 0.5rem;
+        padding-left: 1rem;
+        font-size: 19px;
+    }
+
+    .budget-vs-actual-header option {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1536px) {
+    .budget-vs-actual {
+        height: 70%;
+        min-height: 50%;
+    }
+
+    .budget-vs-actual-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .budget-vs-actual-header select {
+        height: 35px;
+        width: 100%;
+        margin-bottom: 0.5rem;
+        padding-left: 1rem;
+        font-size: 19px;
+    }
+
+    .budget-vs-actual-header option {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 1537px) {
+    .budget-vs-actual {
+        height: 70%;
+        min-height: 50%;
+    }
+
+    .budget-vs-actual-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .budget-vs-actual-header select {
+        height: 60px;
+        width: 100%;
+        margin-bottom: 0.5rem;
+        padding-left: 1rem;
+        font-size: 28px;
+    }
+
+    .budget-vs-actual-header option {
+        font-size: 28px;
+    }
+}

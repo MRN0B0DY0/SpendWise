@@ -1,9 +1,8 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-:root{
- 
+:root {
     --primary: #2563eb;
     --primary-light: #dbeafe;
 
@@ -37,7 +36,7 @@
     background-color: var(--bg-main);
 }
 
-.nav-item{
+.nav-item {
     border-color: white;
     background-color: transparent;
     transition: all 0.3s ease;
@@ -49,7 +48,7 @@
     color: var(--navbar-name);
 }
 
-.nav-item:hover{
+.nav-item:hover {
     background-color: var(--hover);
 }
 
@@ -83,7 +82,7 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.budget-planner-progress{
+.budget-planner-progress {
     width:100%;
     height:12px;
     background:#e5e7eb;
@@ -91,7 +90,7 @@
     overflow:hidden;
 }
 
-.budget-planner-progress-fill{
+.budget-planner-progress-fill {
     height:100%;
     border-radius:30px;
     transition:.4s;
@@ -116,7 +115,7 @@
 
     .budget-planner-content {
         display: grid;
-        grid-template-rows: 0.5fr 1fr 8.5fr;
+        grid-template-rows: 0.5fr 1fr 8fr 0.5fr;
         gap: 0.5rem;
         width: 85vw;
         padding: 1rem;
@@ -127,7 +126,6 @@
 
     .budget-planner-hero {
         padding-top: 1.5rem;
-        padding-bottom: 0.25rem;
     }
 
     .budget-planner-hero-title {
@@ -144,7 +142,7 @@
     }
 
     .budget-planner-header-title {
-        padding-bottom: 1.25rem;
+        padding-bottom: 1.5rem;
     }
 
     .budget-planner-budget-filter {
@@ -220,7 +218,6 @@
         justify-content: center;
         height: 100%;
         width: 100%;
-        border-radius: 10px;
         border: 0px;
     }
 
@@ -336,7 +333,6 @@
         width: 100%;
         font-size: 13px;
         border: 0;
-        border-radius: 10px;
     }
 
     .budget-planner-save-btn {
@@ -397,6 +393,7 @@
     }
 
     .budget-planner-budget-filter-item {
+        height: 25px;
         padding-left: 0.5rem;
     }
 
@@ -451,7 +448,6 @@
         width: 100%;
         font-size: 16px;
         border: 0px;
-        border-radius: 10px;
     }
 
     .budget-planner-save-btn {
@@ -500,7 +496,7 @@
     }
 
     .budget-planner-header-title {
-        padding-bottom: 0.5rem;
+        padding-bottom: 0.8rem;
         font-size: 20px;
     }
     
@@ -512,6 +508,7 @@
     }
 
     .budget-planner-budget-filter-item {
+        height: 25px;
         padding-left: 0.5rem;
     }
 
@@ -567,7 +564,6 @@
         width: 100%;
         font-size: 18px;
         border: 0px;
-        border-radius: 10px;
     }
 
     .budget-planner-save-btn {
@@ -586,7 +582,7 @@
     .budget-planner-content {
         width: 83vw;
         display: grid;
-        grid-template-rows: 1.25fr 1fr 4fr 1fr 1fr 1.75fr;
+        grid-template-rows: 1.25fr 1fr 4fr 1fr 2.75fr;
         gap: 1rem;
         padding: 1rem;
         overflow-y: auto;
@@ -613,7 +609,7 @@
     }
 
     .budget-planner-header-title {
-        padding-bottom: 0.75rem;
+        padding-bottom: 1rem;
         font-size: 20px;
     }
     
@@ -682,10 +678,9 @@
         width: 100%;
         font-size: 15px;
         border: 0px;
-        border-radius: 10px;
     }
 
-    .budget-planner-display-group-text{
+    .budget-planner-display-group-text {
         font-size: 15px;
     }
 
@@ -704,7 +699,7 @@
 
     .budget-planner-content {
         display: grid;
-        grid-template-rows: 0.5fr 0.5fr 2fr 2fr;
+        grid-template-rows: 0.5fr 0.4fr 2fr 2.1fr;
         gap: 1rem;
         width: 83vw;
         padding: 1rem;
@@ -733,7 +728,7 @@
 
     .budget-planner-header-title {
         font-size: 30px;
-        padding-bottom: 2rem;
+        margin-top: 3.4rem;
     }
     
     .budget-planner-budget-filter {
@@ -802,7 +797,6 @@
         width: 100%;
         font-size: 28px;
         border: 0px;
-        border-radius: 10px;
     }
     
     .budget-planner-display-group-text {

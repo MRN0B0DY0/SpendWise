@@ -1,0 +1,660 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-light: #dbeafe;
+
+    --success: #16a34a;
+    --success-light: #dcfce7;
+ 
+    --danger: #dc2626;
+    --danger-light: #fee2e2;
+ 
+    --bg-main: #F8FAFC;
+    --bg-card: #EFF6FF;
+    --bg-sidebar: #111827;
+
+    --navbar-name: #ffffff;    
+    --text-primary: #0F172A;
+    --text-secondary: #64748B;
+
+    --border: #E2E8F0;
+ 
+    --hover: #4F46E5;
+}
+
+.welcome-page {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-page::before {
+    content: "";
+    position: absolute;
+    inset: -20px;
+    background-image: url("../../../assets/images/welcomebackground.png");
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+    z-index: 0;
+}
+
+.welcome-page-card,
+.login-page-card {
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-card);
+    position: relative;
+    z-index: 1;
+    border: solid var(--border) 1px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.welcome-page-brand,
+.welcome-page-heading,
+.welcome-page-description,
+.welcome-page-tagline,
+.login-page-brand,
+.login-page-heading {
+    text-align: center;
+}
+
+.welcome-page-brand h1, 
+.login-page-brand h1 {
+    color: var(--text-primary);
+}
+
+.welcome-page-brand p,
+.welcome-page-heading,
+.welcome-page-description,
+.welcome-page-tagline,
+.login-page-brand p,
+.login-page-heading {
+    color: var(--text-secondary);
+}
+
+.login-page-form-error-msg {
+    color: red;
+}
+
+.welcome-page-actions button,
+.login-page-form-button button {
+    background-color: var(--bg-sidebar);
+    color: #ffffff;
+}
+
+.welcome-page-actions button,
+.login-page-form-email input,
+.login-page-form-password input,
+.login-page-form-button button {
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+@media  screen and (max-width:640px) {
+    .welcome-page-card {
+        height: fit-content;
+        width: 70vw;
+        padding: 0.5rem;
+        display: grid;
+        grid-template-rows: 1.5fr 1.5fr 1fr 0.5fr 0.5fr;
+        gap: 0.5rem;
+    }
+
+    .welcome-page-brand h1 {
+        font-size: 40px;
+    }
+
+    .welcome-page-brand p {
+        font-size: 15px;
+    }
+
+    .welcome-page-heading {
+        font-size: 18px;
+    }
+
+    .welcome-page-description {
+        font-size: 18px;
+    }
+
+    .welcome-page-actions {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-around;
+    }
+
+    .welcome-page-actions button {
+        height: 25px;
+        width: 110px;
+        border: 0;
+        border-radius: 10px;
+    }
+
+    /*login page style*/
+
+    .login-page-card {
+        height: fit-content;
+        width: 70vw;
+        padding: 0.5rem;
+        display: grid;
+        gap: 1rem;
+    }
+
+    .login-page-brand h1 {
+        font-size: 40px;
+    }
+
+    .login-page-brand p {
+        font-size: 15px;
+    }
+
+    .login-page-heading {
+        font-size: 18px;
+    }
+
+    .login-page-form {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        gap: 0.5rem;
+    }
+
+    .login-page-form-email,
+    .login-page-form-password {
+        display: grid;
+        grid-template-rows: auto auto;
+        gap: 0.25rem;
+    }
+
+    .login-page-form-email label,
+    .login-page-form-password label {
+        font-size: 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .login-page-form-email input,
+    .login-page-form-password input {
+        height: 25px;
+        padding-left: 1rem;
+        font-size: 15px;
+    }
+
+    .login-page-form-error-msg {
+        font-size: 11px;
+    }
+
+
+    .login-page-form-button {
+        margin-bottom: 0.5rem;
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .login-page-form-button button {
+        height: 20px;
+        width: 200px;
+        font-size: 12px;
+        border: 0;
+    }
+}
+
+@media screen and (min-width:641px) and (max-width:768px) {
+    .welcome-page-card {
+        height: fit-content;
+        width: 55vw;
+        padding: 0.5rem;
+        display: grid;
+        grid-template-rows: 1.5fr 1.5fr 1fr 0.5fr 0.5fr;
+        gap: 0.5rem;
+    }
+
+    .welcome-page-brand h1 {
+        font-size: 50px;
+    }
+
+    .welcome-page-brand p {
+        font-size: 18px;
+    }
+
+    .welcome-page-heading {
+        font-size: 20px;
+    }
+
+    .welcome-page-description {
+        font-size: 20px;
+    }
+
+    .welcome-page-actions {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-around;
+    }
+
+    .welcome-page-actions button {
+        height: 30px;
+        width: 120px;
+        border: 0;
+        border-radius: 10px;
+    }
+
+    /*login page style*/
+
+    .login-page-card {
+        height: fit-content;
+        width: 60vw;
+        padding: 0.5rem;
+        display: grid;
+        gap: 1rem;
+    }
+
+    .login-page-brand h1 {
+        font-size: 50px;
+    }
+
+    .login-page-brand p {
+        font-size: 18px;
+    }
+
+    .login-page-heading {
+        font-size: 20px;
+    }
+
+    .login-page-form {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-rows: 1fr 1fr 0.15fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .login-page-form-email,
+    .login-page-form-password {
+        display: grid;
+        grid-template-rows: auto auto;
+        gap: 0.25rem;
+    }
+
+    .login-page-form-email label,
+    .login-page-form-password label {
+        font-size: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .login-page-form-email input,
+    .login-page-form-password input {
+        height: 30px;
+        padding-left: 1rem;
+        font-size: 15px;
+    }
+
+    .login-page-form-error-msg {
+        font-size: 12px;
+    }
+
+    .login-page-form-button {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+
+    .login-page-form-button button {
+        height: 30px;
+        width: 110px;
+        border: 0;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .welcome-page-card {
+        height: fit-content;
+        width: 50vw;
+        padding: 0.5rem;
+        display: grid;
+        grid-template-rows: 1.5fr 1.5fr 1fr 0.5fr 0.5fr;
+        gap: 0.5rem;
+    }
+
+    .welcome-page-brand h1 {
+        font-size: 60px;
+    }
+
+    .welcome-page-brand p {
+        font-size: 19px;
+    }
+
+    .welcome-page-heading {
+        font-size: 25px;
+    }
+
+    .welcome-page-description {
+        font-size: 25px;
+    }
+
+    .welcome-page-actions {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-around;
+    }
+
+    .welcome-page-actions button {
+        height: 40px;
+        width: 150px;
+        font-size: 15px;
+        border: 0;
+        border-radius: 10px;
+    }
+
+    /*login page style*/
+
+    .login-page-card {
+        height: fit-content;
+        min-height: 40vh;
+        width: 50vw;
+        padding: 0.5rem;
+        display: grid;
+        gap: 1rem;
+    }
+
+    .login-page-brand h1 {
+        font-size: 60px;
+    }
+
+    .login-page-brand p {
+        font-size: 19px;
+    }
+
+    .login-page-heading {
+        font-size: 25px;
+    }
+
+    .login-page-form {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-rows: 1fr 1fr 0.15fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .login-page-form-email,
+    .login-page-form-password {
+        display: grid;
+        grid-template-rows: auto auto;
+        gap: 0.25rem;
+    }
+
+    .login-page-form-email label,
+    .login-page-form-password label {
+        font-size: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .login-page-form-email input,
+    .login-page-form-password input {
+        height: 32px;
+        padding-left: 1rem;
+        font-size: 15px;
+    }
+
+    .login-page-form-error-msg {
+        font-size: 12px;
+    }
+
+    .login-page-form-button {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+
+    .login-page-form-button button {
+        height: 32px;
+        width: 135px;
+        font-size: 15px;
+        border: 0;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1536px) {
+    .welcome-page-card {
+        height: fit-content;
+        width: 40vw;
+        padding: 0.5rem;
+        display: grid;
+        grid-template-rows: 1.5fr 1.5fr 1fr 0.5fr 0.5fr;
+        gap: 0.5rem;
+    }
+
+    .welcome-page-brand h1 {
+        font-size: 60px;
+    }
+
+    .welcome-page-brand p {
+        font-size: 19px;
+    }
+
+    .welcome-page-heading {
+        font-size: 25px;
+    }
+
+    .welcome-page-description {
+        font-size: 25px;
+    }
+
+    .welcome-page-actions {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-around;
+    }
+
+    .welcome-page-actions button {
+        height: 40px;
+        width: 150px;
+        font-size: 15px;
+        border: 0;
+        border-radius: 10px;
+    }
+
+    /*login page style*/
+
+    .login-page-card {
+        height: fit-content;
+        width: 40vw;
+        padding: 0.5rem;
+        display: grid;
+        gap: 1rem;
+    }
+
+    .login-page-brand h1 {
+        font-size: 60px;
+    }
+
+    .login-page-brand p {
+        font-size: 19px;
+    }
+
+    .login-page-heading {
+        font-size: 25px;
+    }
+
+    .login-page-form {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-rows: 1fr 1fr 0.15fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .login-page-form-email,
+    .login-page-form-password {
+        display: grid;
+        grid-template-rows: auto auto;
+        gap: 0.25rem;
+    }
+
+    .login-page-form-email label,
+    .login-page-form-password label {
+        font-size: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .login-page-form-email input,
+    .login-page-form-password input {
+        height: 32px;
+        padding-left: 1rem;
+        font-size: 15px;
+    }
+
+    .login-page-form-error-msg {
+        font-size: 12px;
+    }
+
+    .login-page-form-button {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+
+    .login-page-form-button button {
+        height: 32px;
+        width: 135px;
+        font-size: 15px;
+        border: 0;
+    }
+}
+
+@media screen and (min-width: 1537px) {
+    .welcome-page-card {
+        height: fit-content;
+        width: 35vw;
+        padding: 1rem;
+        display: grid;
+        grid-template-rows: 1.5fr 1.5fr 1fr 0.5fr 0.5fr;
+        gap: 1rem;
+    }
+
+    .welcome-page-brand h1 {
+        font-size: 100px;
+    }
+
+    .welcome-page-brand p {
+        font-size: 30px;
+    }
+
+    .welcome-page-heading {
+        font-size: 35px;
+    }
+
+    .welcome-page-description {
+        font-size: 35px;
+    }
+
+    .welcome-page-actions {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-around;
+    }
+
+    .welcome-page-actions button {
+        height: 50px;
+        width: 200px;
+        font-size: 28px;
+        border: 0;
+        border-radius: 10px;
+    }
+
+    .welcome-page-tagline {
+        font-size: 28px;
+    }
+
+    /*login page style*/
+
+    .login-page-card {
+        height: fit-content;
+        width: 35vw;
+        padding: 1rem;
+        display: grid;
+        gap: 1rem;
+    }
+
+    .login-page-brand h1 {
+        font-size: 100px;
+    }
+
+    .login-page-brand p {
+        font-size: 30px;
+    }
+
+    .login-page-heading {
+        font-size: 35px;
+    }
+
+    .login-page-form {
+        height: 100%;
+        width: 100%;
+        margin-bottom: 1rem;
+        display: grid;
+        gap: 1rem;
+    }
+
+    .login-page-form-email,
+    .login-page-form-password {
+        display: grid;
+        grid-template-rows: auto auto;
+        gap: 0.5rem;
+    }
+
+    .login-page-form-email label,
+    .login-page-form-password label {
+        font-size: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .login-page-form-email input,
+    .login-page-form-password input {
+        height: 45px;
+        padding-left: 1rem;
+        font-size: 22px;
+    }
+
+    .login-page-form-error-msg {
+        font-size: 18px;
+    }
+
+    .login-page-form-button {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        align-content: flex-start;
+        gap: 1rem;
+    }
+
+    .login-page-form-button button {
+        height: 60px;
+        width: 150px;
+        font-size: 25px;
+    }
+}
+

@@ -1,0 +1,97 @@
+.expense-by-category {
+    box-sizing: border-box;
+}
+
+.expense-by-category-chart {
+    height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.expense-category-message {
+    margin: 0;
+    font-size: 15px;
+    color: #6b7280;
+    text-align: center;
+}
+
+@media screen and (max-width: 380px) {
+    .expense-by-category-chart {
+        height: 200px;
+        width: 220px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .expense-by-category {
+        width: 99%;
+    }
+}
+
+@media screen and (min-width: 641px) and (max-width: 768px) {
+    .expense-by-category-header h3 {
+        font-size: 17px;
+    }
+
+    .expense-by-category-header p {
+        font-size: 13px;
+    }
+
+    .expense-by-category {
+        height: 80%;
+    }
+
+    .expense-by-category-chart {
+        height: 99%;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .expense-by-category-header h3 {
+        font-size: 18px;
+    }
+
+    .expense-by-category {
+        height: 70%;
+        min-height: 50%;
+    }
+
+    .expense-by-category-chart {
+        height: 99%;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    .expense-by-category {
+        height: 70%;
+        min-height: 50%;
+    }
+
+    .expense-by-category-chart {
+        height: 99%;
+    }
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1536px) {
+    .expense-by-category {
+        height: 70%;
+        min-height: 80%;
+    }
+
+    .expense-by-category-chart {
+        height: 99%;
+    }
+}
+
+@media screen and (min-width: 1537px) {
+    .expense-by-category {
+        height: 70%;
+        min-height: 80%;
+    }
+
+    .expense-by-category-chart {
+        height: 99%;
+    }
+}

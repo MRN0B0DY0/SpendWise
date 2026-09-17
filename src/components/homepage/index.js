@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import { getTransactions, getSpendingOverTime } from "../../services/transactionApi";
 import './index.css'
@@ -10,50 +10,41 @@ import {
     reportsicon,
     transactionsicon,
     logo,
+    logouticon
 } from '../../assets'
 
 const Homepage = () => {
     const [transactions, setTransactions] = useState([]);
     const [monthlyExpense, setMonthlyExpense] = useState([]);
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        navigate("/");
+    };
 
     useEffect(() => {
-
         const fetchData = async () => {
-
             try {
-
                 const [transactionsData, monthlyData] = await Promise.all([
                     getTransactions(),
                     getSpendingOverTime()
                 ]);
-
                 setTransactions(transactionsData);
                 setMonthlyExpense(monthlyData);
-
             } catch (error) {
-
                 console.log(error);
-
             }
-
         };
-
         fetchData();
-
     }, []);
 
     const totalIncome = transactions.reduce(
-        (sum, transaction) =>
-            transaction.type === "Income"
-                ? sum + Number(transaction.amount)
-                : sum,0
+        (sum, transaction) => transaction.type === "Income" ? sum + Number(transaction.amount) : sum,0
     );
 
     const totalExpense = transactions.reduce(
-        (sum, transaction) =>
-            transaction.type === "Expense"
-                ? sum + Number(transaction.amount)
-                : sum, 0
+        (sum, transaction) => transaction.type === "Expense" ? sum + Number(transaction.amount) : sum, 0
     );
 
     const categoryTotals = {};
@@ -63,7 +54,6 @@ const Homepage = () => {
                 (categoryTotals[transaction.category] || 0)
                 + Number(transaction.amount);
         }
-
     });
 
     const paymentMethods = {};
@@ -99,7 +89,6 @@ const Homepage = () => {
         1
     );
 
-   
     const topCategories = Object.entries(categoryTotals).sort((a, b) => b[1] - a[1]).slice(0, 3);
     const recentTransactions = transactions.slice(0, 5);
     const totalBalance = totalIncome - totalExpense;
@@ -117,10 +106,11 @@ const Homepage = () => {
                         <p className="nav-subtitle">Finance Tracker</p>
                     </div>
                 </div>
+
                 <div>
                     <ul className="nav-links-list">
                         <li className="nav-item">
-                            <Link to="/" className="link-container">
+                            <Link to="/homepage" className="link-container">
                                 <img src={dashboardicon} alt="Dashboard Icon" className="nav-icon" />
                                 <p className="nav-link">Dashboard</p>
                             </Link>
@@ -157,6 +147,16 @@ const Homepage = () => {
                         </li>
                     </ul>
                 </div>
+
+                <div className='nav-logout-btn'>
+                    <div className='nav-item' onClick={handleLogout}>
+                        <div className='link-container'>
+                            <img src={logouticon} alt="Logout Icon" className='nav-icon' />
+                            <p className='nav-link'>Logout</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             <div className="dashboard">
@@ -274,6 +274,7 @@ const Homepage = () => {
                             }
                         </div>
                     </div>
+                    
                     <div className="dashboard-detail-card">
                         <h2 className="dashboard-detail-title">Payment Methods Analysis</h2>
                         <div className="payment-chart">

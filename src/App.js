@@ -1,4 +1,6 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import ProtectedRoute from './components/authentication/ProtectedRoute';
+import Welcome from './components/authentication/welcome';
 import Homepage from './components/homepage'
 import Transactions from './components/transactions'
 import Addtransactions from './components/addtransaction'
@@ -9,17 +11,62 @@ import Profile from './components/profile'
 import './App.css';
 
 const App = () => (
-    <Router>
+  <Router>
         <div className="App">
             <Routes>
-                <Route path="/" element={<Homepage />} />
-                <Route path="/transactions" element={<Transactions />} />
-                <Route path="/add-transaction" element={<Addtransactions />} />
-                <Route path="/budget-planner" element={<Budgetplanner />} />
-                <Route path="/reports" element={<Report />} />
-                <Route path="/profile" element={<Profile />} />
+
+                {/* Public Route */}
+                <Route path="/" element={<Welcome />} />
+
+                {/* Protected Routes */}
+                <Route path="/homepage" element={
+                        <ProtectedRoute> 
+                            <Homepage />
+                        </ProtectedRoute>
+                    }
+                />
+
+                <Route path="/transactions" element={
+                        <ProtectedRoute>
+                            <Transactions />
+                        </ProtectedRoute>
+                    }
+                />
+
+                <Route path="/add-transaction" element={
+                        <ProtectedRoute>
+                            <Addtransactions />
+                        </ProtectedRoute>
+                    }
+                />
+
+                <Route path="/budget-planner" element={
+                        <ProtectedRoute>
+                            <Budgetplanner />
+                        </ProtectedRoute>
+                    }
+                />
+
+                <Route path="/reports" element={
+                        <ProtectedRoute>
+                            <Report />
+                        </ProtectedRoute>
+                    }
+                />
+
+                <Route path="/profile" element={
+                        <ProtectedRoute>
+                            <Profile />
+                        </ProtectedRoute>
+                    }
+                />
+
             </Routes>
+
         </div>
+
     </Router>
+
 )
+
 export default App;
