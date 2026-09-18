@@ -1109,6 +1109,7 @@
 @media screen and (min-width: 1537px) {
     .nav-menu {
         width: 20vw;
+        flex-shrink: 0;
         padding: 2rem;
         padding-top: 2.25rem;
         display: grid;
@@ -1191,10 +1192,10 @@
     }
 
     .dashboard {
+        width: 80vw;
         display: grid;
         grid-template-rows: 0.7fr 0.7fr 1.6fr 2fr;
         gap: 1rem;
-        width: 80vw;
         padding: 1.5rem;
         overflow-y: auto;
     }

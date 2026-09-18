@@ -216,6 +216,7 @@ const Transactions = () => {
                         <img src={searchicon} alt="Search" className="search-icon" />
                         <input type="text" placeholder="Search transactions..." className="search-box-input" value={searchInput} onChange={event =>setSearchInput(event.target.value)} />
                     </div>
+                    
                     <div className="filter-options">
                         <select
                         className="filter-options-input"
