@@ -58,6 +58,7 @@
 
 .dashboard {
     background-color: var(--bg-main);
+    overflow: auto;
 }
 
 .dashboard-title {
@@ -158,8 +159,13 @@
 }
 
 .monthly-value {
+    display:none;
     font-size:12px;
     color:#64748B;
+}
+
+.monthly-bar-container:hover .monthly-value {
+    display: block;
 }
 
 /* spending breakdown */
@@ -489,12 +495,13 @@
 
     .dashboard-widgets {
         display: grid;
-        grid-template-columns: 1.25fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 0.5rem;
     }
 
     .dashboard-widget-card {
         padding: 0.5rem;
+        overflow: auto;
     }
 
    .monthly-chart {
@@ -503,6 +510,14 @@
 
     .monthly-value {
         margin-bottom: 0.5rem;
+    }
+
+    .monthly-bar {
+        width: 20px;
+    }
+
+    .monthly-name {
+        font-size: 12px;
     }
 
     .dashboard-widget-card-text-container {
@@ -682,6 +697,7 @@
 
     .dashboard-widget-card {
         padding: 0.5rem;
+        overflow: auto;
     }
 
     .monthly-chart {
@@ -690,6 +706,10 @@
 
     .monthly-value {
         margin-bottom: 0.5rem;
+    }
+
+    .monthly-bar {
+        width: 30px;
     }
     
     .dashboard-widget-card-text-container {

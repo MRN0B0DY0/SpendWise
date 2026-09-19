@@ -212,6 +212,7 @@ const Homepage = () => {
                             }
                         </div>
                     </div>
+
                     <div className="dashboard-widget-card dashboard-widget-categories">
                         <h2 className="dashboard-widget-title">Top Spending Categories</h2>
                         <div className="dashboard-widget-card-text-container">
@@ -224,6 +225,7 @@ const Homepage = () => {
                             }
                         </div>
                     </div>
+                    
                     <div className="dashboard-widget-card dashboard-widget-transactions">
                         <h2 className="dashboard-widget-title">Recent Transactions</h2>
                         <div className="dashboard-widget-card-text-container">
