@@ -1,0 +1,34 @@
+.spending-breakdown-chart {
+    width: 100%;
+    height: 220px;
+}
+
+@media screen and (min-width: 641px) and (max-width: 768px) {
+    .spending-breakdown-chart {
+        height: 300px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .spending-breakdown-chart {
+        height: 260px;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    .spending-breakdown-chart {
+        height: 240px;
+    }
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1536px) {
+    .spending-breakdown-chart {
+        height: 240px;
+    }
+}
+
+@media screen and (min-width: 1537px) {
+    .spending-breakdown-chart {
+        height: 450px;
+    }
+}

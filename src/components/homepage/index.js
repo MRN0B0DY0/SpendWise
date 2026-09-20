@@ -1,6 +1,9 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import { getTransactions, getSpendingOverTime } from "../../services/transactionApi";
+import SpendingOverTimeChart from "./spendingOverTimeChart";
+import SpendingBreakdown from "./spendingBreakdown";
+import PaymentMethodsAnalysis from "./paymentMethodsAnalysis";
 import './index.css'
 import {    
     addtransactionicon,
@@ -188,28 +191,9 @@ const Homepage = () => {
                     <div className="dashboard-widget-card dashboard-widget-chart">
                         <h2 className="dashboard-widget-title">Spending Over Time</h2>
                        <div className="monthly-chart">
-                            {
-                                monthlyExpense.map(item => (
-                                    <div
-                                        key={item.month}
-                                        className="monthly-bar-container"
-                                    >
-                                        <p className="monthly-value">
-                                            ₹{item.total_expense || 0}
-                                        </p>
-                                        <div
-                                            className="monthly-bar"
-                                            style={{
-                                                height:
-                                                    `${Number(item.total_expense) / maxExpense * 160}px`
-                                            }}
-                                        ></div>
-                                        <p className="monthly-name">
-                                            {item.month}
-                                        </p>
-                                    </div>
-                                ))
-                            }
+                            <SpendingOverTimeChart
+                                monthlyExpense={monthlyExpense}
+                            />
                         </div>
                     </div>
 
@@ -225,7 +209,7 @@ const Homepage = () => {
                             }
                         </div>
                     </div>
-                    
+
                     <div className="dashboard-widget-card dashboard-widget-transactions">
                         <h2 className="dashboard-widget-title">Recent Transactions</h2>
                         <div className="dashboard-widget-card-text-container">
@@ -250,6 +234,58 @@ const Homepage = () => {
                     <div className="dashboard-detail-card dashboard-detail-spending">
                         <h2 className="dashboard-detail-title">Spending Breakdown</h2>
                         <div className="category-breakdown">
+                                <SpendingBreakdown
+                                    spendingData={spendingData}
+                                />
+                        </div>
+                    </div>
+                    
+                    <div className="dashboard-detail-card">
+                        <h2 className="dashboard-detail-title">Payment Methods Analysis</h2>
+                        <div className="payment-chart">
+                            <PaymentMethodsAnalysis
+                                paymentMethodData={paymentMethodData}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    );
+};
+
+export default Homepage;
+
+
+/*
+
+
+                            {
+                                monthlyExpense.map(item => (
+                                    <div
+                                        key={item.month}
+                                        className="monthly-bar-container"
+                                    >
+                                        <p className="monthly-value">
+                                            ₹{item.total_expense || 0}
+                                        </p>
+                                        <div
+                                            className="monthly-bar"
+                                            style={{
+                                                height:
+                                                    `${Number(item.total_expense) / maxExpense * 160}px`
+                                            }}
+                                        ></div>
+                                        <p className="monthly-name">
+                                            {item.month}
+                                        </p>
+                                    </div>
+                                ))
+                            }
+
+
+
+
                             {
                                 spendingData.map(category => (
                                     <div
@@ -274,12 +310,8 @@ const Homepage = () => {
                                     </div>
                                 ))
                             }
-                        </div>
-                    </div>
-                    
-                    <div className="dashboard-detail-card">
-                        <h2 className="dashboard-detail-title">Payment Methods Analysis</h2>
-                        <div className="payment-chart">
+
+
                             {paymentMethodData.map(method => (
                                 <div
                                     key={method[0]}
@@ -298,12 +330,6 @@ const Homepage = () => {
                                     </div>
                                 </div>
                             ))}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>    
-    );
-};
 
-export default Homepage;
+
+                            */
