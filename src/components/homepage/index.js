@@ -67,16 +67,6 @@ const Homepage = () => {
 
     const paymentMethodData = Object.entries(paymentMethods);
 
-    const maxPaymentCount = Math.max(
-        ...paymentMethodData.map(method => method[1]),
-        1
-    );
-
-    const maxExpense = Math.max(
-        ...monthlyExpense.map(item => Number(item.total_expense || 0)),
-        1
-    );
-
     const spendingBreakdown = {};
     transactions.forEach(transaction => {
         if (transaction.type === "Expense") {
@@ -87,10 +77,6 @@ const Homepage = () => {
     });
 
     const spendingData = Object.entries(spendingBreakdown);
-    const maxCategoryExpense = Math.max(
-        ...spendingData.map(category => category[1]),
-        1
-    );
 
     const topCategories = Object.entries(categoryTotals).sort((a, b) => b[1] - a[1]).slice(0, 3);
     const recentTransactions = transactions.slice(0, 5);
@@ -255,81 +241,3 @@ const Homepage = () => {
 };
 
 export default Homepage;
-
-
-/*
-
-
-                            {
-                                monthlyExpense.map(item => (
-                                    <div
-                                        key={item.month}
-                                        className="monthly-bar-container"
-                                    >
-                                        <p className="monthly-value">
-                                            ₹{item.total_expense || 0}
-                                        </p>
-                                        <div
-                                            className="monthly-bar"
-                                            style={{
-                                                height:
-                                                    `${Number(item.total_expense) / maxExpense * 160}px`
-                                            }}
-                                        ></div>
-                                        <p className="monthly-name">
-                                            {item.month}
-                                        </p>
-                                    </div>
-                                ))
-                            }
-
-
-
-
-                            {
-                                spendingData.map(category => (
-                                    <div
-                                        key={category[0]}
-                                        className="category-item"
-                                    >
-                                        <div className="dashboard-detail-text">
-                                            <span>
-                                                {category[0]}
-                                            </span>
-
-                                        </div>
-                                        <div className="category-bar-background">
-                                            <div
-                                                className="category-bar-fill"
-                                                style={{
-                                                    width:
-                                                        `${(category[1] / maxCategoryExpense) * 100}%`
-                                                }}
-                                            ></div>
-                                        </div>
-                                    </div>
-                                ))
-                            }
-
-
-                            {paymentMethodData.map(method => (
-                                <div
-                                    key={method[0]}
-                                    className="payment-bar-item"
-                                >
-                                    <div className="dashboard-detail-text">
-                                        <span>{method[0]}</span>
-                                    </div>
-                                    <div className="payment-bar-background">
-                                        <div
-                                            className="payment-bar-fill"
-                                            style={{
-                                                width: `${(method[1] / maxPaymentCount) * 100}%`
-                                            }}
-                                        ></div>
-                                    </div>
-                                </div>
-                            ))}
-
-
-                            */
