@@ -1,27 +1,15 @@
 {
-    "services": {
-        "frontend": {
-            "root": ".",
-            "framework": "create-react-app"
-        },
-        "backend": {
-            "root": "backend"
+    "version": 2,
+    "builds": [
+        {
+            "src": "server.js",
+            "use": "@vercel/node"
         }
-    },
-    "rewrites": [
+    ],
+    "routes": [
         {
-            "source": "/api(/.*)?",
-            "destination": {
-                "type": "service",
-                "service": "backend"
-            }
-        },
-        {
-            "source": "/(.*)",
-            "destination": {
-                "type": "service",
-                "service": "frontend"
-            }
+            "src": "/(.*)",
+            "dest": "/server.js"
         }
     ]
 }
