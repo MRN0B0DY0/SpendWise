@@ -4,7 +4,7 @@ const db = mysql.createConnection({
     host: "sql.freedb.tech",
     user: "u_5KNlwi",
     password: "BZy8ZxTBCdXI",
-    database: "freedb_DKsCAbn7",
+    database: "freedb_DksCAbn7",
 });
 
 db.connect(error => {
