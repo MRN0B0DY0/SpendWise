@@ -249,7 +249,7 @@ export const getProfileStats = async () => {
 
 export const loginUser = async (email, password) => {
     const response = await fetch(
-        "http://localhost:5000/login",
+        "spendwise-backend-lime.vercel.app/login",
         {
             method: "POST",
             headers: {
@@ -274,7 +274,7 @@ export const loginUser = async (email, password) => {
 export const getCurrentUser = async () => {
     const token = localStorage.getItem("token");
     const response = await fetch(
-        "http://localhost:5000/me",
+        "spendwise-backend-lime.vercel.app/me",
         {
             headers: {
                 Authorization: `Bearer ${token}`
