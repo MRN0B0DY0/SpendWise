@@ -9,11 +9,23 @@ const db = mysql.createConnection({
 
 db.connect(error => {
     if (error) {
-        console.log("Database Connection Failed");
+        console.log("DATABASE CONNECTION ERROR:");
         console.log(error);
-    } else {
-        console.log("Database Connected");
+        return;
     }
+
+    console.log("DATABASE CONNECTED SUCCESSFULLY");
+
+    db.query("SELECT DATABASE() AS database_name", (error, result) => {
+        if (error) {
+            console.log("DATABASE TEST QUERY FAILED:");
+            console.log(error);
+            return;
+        }
+
+        console.log("CONNECTED DATABASE:");
+        console.log(result);
+    });
 });
 
 module.exports = db;
