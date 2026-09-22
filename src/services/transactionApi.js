@@ -65,7 +65,7 @@ export const deleteTransaction = async (id) => {
 export const getSpendingOverTime = async () => {
     const token = localStorage.getItem("token");
     const response = await fetch(
-        "http://localhost:5000/spending-over-time",
+        "https://spendwise-backend-lime.vercel.app/spending-over-time",
         {
             headers: {
                 Authorization: `Bearer ${token}`,
