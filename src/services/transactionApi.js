@@ -19,7 +19,7 @@ const handleResponse = async (response) => {
 export const addTransaction = async transactionData => {
     const token = localStorage.getItem("token");
     const response = await fetch(
-        "http://localhost:5000/transactions",
+        "https://spendwise-backend-lime.vercel.app/transactions",
         {
             method: "POST",
             headers: {
@@ -36,7 +36,7 @@ export const addTransaction = async transactionData => {
 export const getTransactions = async () => {
     const token = localStorage.getItem("token");
     const response = await fetch(
-        "http://localhost:5000/transactions",
+        "https://spendwise-backend-lime.vercel.app/transactions",
         {
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -50,7 +50,7 @@ export const getTransactions = async () => {
 export const deleteTransaction = async (id) => {
     const token = localStorage.getItem("token");
     const response = await fetch(
-        `http://localhost:5000/transactions/${id}`,
+        `https://spendwise-backend-lime.vercel.app/transactions/${id}`,
         {
             method: "DELETE",
             headers: {
@@ -79,7 +79,7 @@ export const getSpendingOverTime = async () => {
 export const getBudgets = async (month, year) => {
     const token = localStorage.getItem("token");
     const response = await fetch(
-        `http://localhost:5000/budgets?month=${month}&year=${year}`,
+        `https://spendwise-backend-lime.vercel.app/budgets?month=${month}&year=${year}`,
         {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -93,7 +93,7 @@ export const getBudgets = async (month, year) => {
 export const updateBudget = async (budgetId, budgetAmount) => {
     const token = localStorage.getItem("token");
     const response = await fetch(
-        `http://localhost:5000/budgets/${budgetId}`,
+        `https://spendwise-backend-lime.vercel.app/budgets/${budgetId}`,
         {
             method: "PUT",
             headers: {
@@ -112,7 +112,7 @@ export const updateBudget = async (budgetId, budgetAmount) => {
 export const createBudget = async (category, budgetAmount, budgetMonth, budgetYear ) => {
     const token = localStorage.getItem("token");
     const response = await fetch(
-        "http://localhost:5000/budgets",
+        "https://spendwise-backend-lime.vercel.app/budgets",
         {
             method: "POST",
             headers: {
@@ -136,7 +136,7 @@ export const createBudget = async (category, budgetAmount, budgetMonth, budgetYe
 export const getReportSummary = async (month, year) => {
     const token = localStorage.getItem("token");
     const response = await fetch(
-        `http://localhost:5000/report-summary?month=${month}&year=${year}`,
+        `https://spendwise-backend-lime.vercel.app/report-summary?month=${month}&year=${year}`,
         {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -150,7 +150,7 @@ export const getReportSummary = async (month, year) => {
 export const getIncomeVsExpenseChart = async year => {
     const token = localStorage.getItem("token");
     const response = await fetch(
-        `http://localhost:5000/report-income-expense?year=${year}`,
+        `https://spendwise-backend-lime.vercel.app/report-income-expense?year=${year}`,
         {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -164,7 +164,7 @@ export const getIncomeVsExpenseChart = async year => {
 export const getBudgetVsActual = async (month, year, category) => {
     const token = localStorage.getItem("token");
     const response = await fetch(
-        `http://localhost:5000/report-budget-vs-actual?month=${month}&year=${year}&category=${category}`,
+        `https://spendwise-backend-lime.vercel.app/report-budget-vs-actual?month=${month}&year=${year}&category=${category}`,
         {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -178,7 +178,7 @@ export const getBudgetVsActual = async (month, year, category) => {
 export const getExpenseByCategory = async (month, year) => {
     const token = localStorage.getItem("token");
     const response = await fetch(
-        `http://localhost:5000/report-expense-category?month=${month}&year=${year}`,
+        `https://spendwise-backend-lime.vercel.app/report-expense-category?month=${month}&year=${year}`,
         {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -192,7 +192,7 @@ export const getExpenseByCategory = async (month, year) => {
 export const getCategoryPerformance = async (month, year) => {
     const token = localStorage.getItem("token");
     const response = await fetch(
-        `http://localhost:5000/report-category-performance?month=${month}&year=${year}`,
+        `https://spendwise-backend-lime.vercel.app/report-category-performance?month=${month}&year=${year}`,
         {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -206,7 +206,7 @@ export const getCategoryPerformance = async (month, year) => {
 export const getReportRecentTransactions = async (month, year) => {
     const token = localStorage.getItem("token");
     const response = await fetch(
-        `http://localhost:5000/report-recent-transactions?month=${month}&year=${year}`,
+        `https://spendwise-backend-lime.vercel.app/report-recent-transactions?month=${month}&year=${year}`,
         {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -220,7 +220,7 @@ export const getReportRecentTransactions = async (month, year) => {
 export const getSmartInsights = async (month, year) => {
     const token = localStorage.getItem("token");
     const response = await fetch(
-        `http://localhost:5000/report-smart-insights?month=${month}&year=${year}`,
+        `https://spendwise-backend-lime.vercel.app/report-smart-insights?month=${month}&year=${year}`,
         {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -236,7 +236,7 @@ export const getSmartInsights = async (month, year) => {
 export const getProfileStats = async () => {
     const token = localStorage.getItem("token");
     const response = await fetch(
-        "http://localhost:5000/profile-stats",
+        "https://spendwise-backend-lime.vercel.app/profile-stats",
         {
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -288,7 +288,7 @@ export const getCurrentUser = async () => {
 export const updateProfile = async (first_name, last_name) => {
     const token = localStorage.getItem("token");
     const response = await fetch(
-        "http://localhost:5000/profile",
+        "https://spendwise-backend-lime.vercel.app/profile",
         {
             method: "PUT",
             headers: {
