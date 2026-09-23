@@ -252,7 +252,7 @@ const Transactions = () => {
                 <div className="transactions-list">
                 {
                     transactions.length === 0 ? (
-                        <p>No Transactions Found</p>
+                        <p>Loading Transactions</p>
                     ) : (
                         filteredTransactions.map(transaction => (
                             <div
