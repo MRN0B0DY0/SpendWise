@@ -207,7 +207,7 @@ const Homepage = () => {
                                     >
                                         {transaction.transaction_name}
                                         {" : "}
-                                        ₹{transaction.amount.split(".")[0]}
+                                        ₹{Number(transaction.amount).toLocaleString()}
                                     </p>
                                 ))
                             }

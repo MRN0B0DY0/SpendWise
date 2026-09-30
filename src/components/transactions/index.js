@@ -288,7 +288,7 @@ const Transactions = () => {
                                 </p>
 
                                 <p className="transaction-card-amount">
-                                    ₹{transaction.amount.split(".")[0]}
+                                    ₹{Number(transaction.amount).toLocaleString()}
                                 </p>
 
                                 <button

@@ -1,3 +1,4 @@
+/*
 const mysql = require("mysql2");
 
 const db = mysql.createConnection({
@@ -29,3 +30,18 @@ db.connect(error => {
 });
 
 module.exports = db;
+
+*/
+
+const fs = require("fs");
+const path = require("path");
+
+const dataPath = path.join(__dirname, "data.json");
+
+const data = JSON.parse(
+    fs.readFileSync(dataPath, "utf-8")
+);
+
+console.log("DATA.JSON LOADED SUCCESSFULLY");
+
+module.exports = data;
